@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'TGLParallaxCarousel_Example' do
+  pod 'TGLParallaxCarousel', :path => '../'
+
+  target 'TGLParallaxCarousel_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
