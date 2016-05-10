@@ -9,7 +9,7 @@ A lightweight 3D Linear Carousel with parallax effect
 
 ### Threedimensional mode (gif)
 
-![Threedimensional demo](https://raw.githubusercontent.com/taglia3/ParallaxCarousel/master/gif/Threedimensional.gif)![Normal demo](https://raw.githubusercontent.com/taglia3/ParallaxCarousel/master/gif/Normal.gif)
+![Threedimensional demo](https://raw.githubusercontent.com/taglia3/ParallaxCarousel/master/gif/Threedimensional.gif)    ![Normal demo](https://raw.githubusercontent.com/taglia3/ParallaxCarousel/master/gif/Normal.gif)
 
 ### Normal mode (gif)
 
