@@ -1,0 +1,6 @@
+framework module TGLParallaxCarousel {
+  umbrella header "TGLParallaxCarousel-umbrella.h"
+
+  export *
+  module * { export * }
+}

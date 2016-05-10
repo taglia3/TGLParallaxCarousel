@@ -8,35 +8,24 @@
 
 Pod::Spec.new do |s|
   s.name             = "TGLParallaxCarousel"
-  s.version          = "0.1.0"
-  s.summary          = "A short description of TGLParallaxCarousel."
-
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
-
+  s.version          = "0.2"
+  s.summary          = "A lightweight 3D Linear Carousel with parallax effect."
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+A lightweight 3D Linear Carousel with parallax effect. Use this custom View to create beatiful effects.
                        DESC
 
-  s.homepage         = "https://github.com/<GITHUB_USERNAME>/TGLParallaxCarousel"
+  s.homepage         = "https://github.com/taglia3/TGLParallaxCarousel"
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
-  s.author           = { "taglia3" => "matteo.tagliafico@gmail.com" }
-  s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/TGLParallaxCarousel.git", :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.author           = { "taglia3" => "the.taglia3@gmail.com" }
+  s.source           = { :git => "https://github.com/taglia/TGLParallaxCarousel.git", :tag => s.version.to_s }
+  # s.social_media_url = 'https://twitter.com/taglia3'
 
   s.ios.deployment_target = '8.0'
 
   s.source_files = 'TGLParallaxCarousel/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'TGLParallaxCarousel' => ['TGLParallaxCarousel/Assets/*.png']
-  # }
+
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+   s.frameworks = 'UIKit'
 end

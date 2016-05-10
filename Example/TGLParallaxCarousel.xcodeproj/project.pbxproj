@@ -14,6 +14,8 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		CC00F9341CE28032000F3DC9 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC00F9321CE28032000F3DC9 /* CustomView.swift */; };
+		CC00F9351CE28032000F3DC9 /* CustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC00F9331CE28032000F3DC9 /* CustomView.xib */; };
 		E3A269072EA2B437E58CA1D2 /* Pods_TGLParallaxCarousel_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8C5E32CA91D74C4A80AB464 /* Pods_TGLParallaxCarousel_Tests.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +47,8 @@
 		8881E0A40DC9C17D6011E0BD /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		B8C5E32CA91D74C4A80AB464 /* Pods_TGLParallaxCarousel_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TGLParallaxCarousel_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2B8686F5D17CD4FFD0A18EA /* Pods-TGLParallaxCarousel_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TGLParallaxCarousel_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TGLParallaxCarousel_Tests/Pods-TGLParallaxCarousel_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		CC00F9321CE28032000F3DC9 /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		CC00F9331CE28032000F3DC9 /* CustomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomView.xib; sourceTree = "<group>"; };
 		D1DC655ED4D9A8A3B7F13C97 /* Pods_TGLParallaxCarousel_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TGLParallaxCarousel_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE95AAA85555BF5DD360AD76 /* Pods-TGLParallaxCarousel_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TGLParallaxCarousel_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-TGLParallaxCarousel_Example/Pods-TGLParallaxCarousel_Example.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -102,6 +106,7 @@
 		607FACD21AFB9204008FA782 /* Example for TGLParallaxCarousel */ = {
 			isa = PBXGroup;
 			children = (
+				CC00F9311CE2800B000F3DC9 /* Custom Item */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
@@ -146,6 +151,15 @@
 				40FCF62B937A4E99E30F4090 /* LICENSE */,
 			);
 			name = "Podspec Metadata";
+			sourceTree = "<group>";
+		};
+		CC00F9311CE2800B000F3DC9 /* Custom Item */ = {
+			isa = PBXGroup;
+			children = (
+				CC00F9321CE28032000F3DC9 /* CustomView.swift */,
+				CC00F9331CE28032000F3DC9 /* CustomView.xib */,
+			);
+			name = "Custom Item";
 			sourceTree = "<group>";
 		};
 		E26D4B3ACD2C1392D7AA3CF1 /* Pods */ = {
@@ -247,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
+				CC00F9351CE28032000F3DC9 /* CustomView.xib in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
@@ -359,6 +374,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC00F9341CE28032000F3DC9 /* CustomView.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);

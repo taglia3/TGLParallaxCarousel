@@ -1,0 +1,19 @@
+{
+  "name": "TGLParallaxCarousel",
+  "version": "0.2",
+  "summary": "A lightweight 3D Linear Carousel with parallax effect.",
+  "description": "A lightweight 3D Linear Carousel with parallax effect",
+  "homepage": "https://github.com/taglia3/TGLParallaxCarousel",
+  "license": "MIT",
+  "authors": {
+    "taglia3": "matteo.tagliafico@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/taglia/TGLParallaxCarousel.git",
+    "tag": "0.2"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "TGLParallaxCarousel/Classes/**/*"
+}
