@@ -5,7 +5,6 @@
 [![License](https://img.shields.io/cocoapods/l/TGLParallaxCarousel.svg?style=flat)](http://cocoapods.org/pods/TGLParallaxCarousel)
 [![Platform](https://img.shields.io/cocoapods/p/TGLParallaxCarousel.svg?style=flat)](http://cocoapods.org/pods/TGLParallaxCarousel)
 
-# ParallaxCarousel
 A lightweight 3D Linear Carousel with parallax effect
 
 ### Threedimensional mode (gif)
