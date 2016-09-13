@@ -11,18 +11,20 @@ import TGLParallaxCarousel
 
 class ViewController: UIViewController {
     
+    // MARK: - outlets
     @IBOutlet weak var carouselView: TGLParallaxCarousel!
     
+    
+    // MARK: - view lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCarousel()
     }
     
-    func setupCarousel() {
+    private func setupCarousel() {
         carouselView.delegate = self
-        carouselView.datasource = self
-        carouselView.itemMargin = 10
-//        carouselView.selectedIndex = 2
+        carouselView.margin = 10
+        carouselView.selectedIndex = 2
     }
     
     override func prefersStatusBarHidden() -> Bool {
@@ -30,23 +32,23 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: TGLParallaxCarouselDatasource {
-    func numberOfItemsInCarousel(carousel: TGLParallaxCarousel) ->Int {
+
+// MARK: - TGLParallaxCarouselDelegate
+extension ViewController: TGLParallaxCarouselDelegate {
+    
+    func numberOfItemsInCarouselView(carouselView: TGLParallaxCarousel) -> Int {
         return 5
     }
     
-    func viewForItemAtIndex(index: Int, carousel: TGLParallaxCarousel) -> TGLParallaxCarouselItem {
-        let ratio: CGFloat = view.frame.width / 375.0
-        return CustomView(frame: CGRectMake(0, 0, 300 * ratio, 150 * ratio), number: "\(index + 1)")
+    func carouselView(carouselView: TGLParallaxCarousel, itemForRowAtIndex index: Int) -> TGLParallaxCarouselItem {
+        return CustomView(frame: CGRectMake(0, 0, 300, 150), number: index)
     }
-}
 
-extension ViewController: TGLParallaxCarouselDelegate {
-    func didTapOnItemAtIndex(index: Int, carousel: TGLParallaxCarousel) {
+    func carouselView(carouselView: TGLParallaxCarousel, didSelectItemAtIndex index: Int) {
         print("Tap on item at index \(index)")
     }
     
-    func didMovetoPageAtIndex(index: Int) {
-        print("Did move to index \(index)")
+    func carouselView(carouselView: TGLParallaxCarousel, willDisplayItem item: TGLParallaxCarouselItem, forIndex index: Int) {
+        print("")
     }
 }

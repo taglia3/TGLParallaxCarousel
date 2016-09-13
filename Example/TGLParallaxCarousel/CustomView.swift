@@ -9,35 +9,43 @@
 import UIKit
 import TGLParallaxCarousel
 
+@IBDesignable
 class CustomView: TGLParallaxCarouselItem {
     
-    @IBOutlet weak var numberLabel: UILabel!
+    // MARK: - outlets
+    @IBOutlet private weak var numberLabel: UILabel!
     
-    
+    // MARK: - properties
     private var containerView: UIView!
-    private let customViewNibName = "CustomView"
+    private let nibName = "CustomView"
+    
+    @IBInspectable
+    var number: Int = 0 {
+        didSet{
+           numberLabel.text = "\(number)"
+        }
+    }
     
     
-    // MARK: init methods
-    convenience init(frame: CGRect, number: String) {
+    // MARK: - init
+    convenience init(frame: CGRect, number: Int) {
         self.init(frame: frame)
-        numberLabel.text = number
+        numberLabel.text = "\(number)"
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         xibSetup()
-        setupUI()
+        setup()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         xibSetup()
-        setupUI()
+        setup()
     }
     
     func xibSetup() {
-        
         containerView = loadViewFromNib()
         containerView.frame = bounds
         containerView.autoresizingMask = [UIViewAutoresizing.FlexibleWidth, UIViewAutoresizing.FlexibleHeight]
@@ -45,18 +53,18 @@ class CustomView: TGLParallaxCarouselItem {
     }
     
     func loadViewFromNib() -> UIView {
-        
         let bundle = NSBundle(forClass: self.dynamicType)
-        let nib = UINib(nibName: customViewNibName, bundle: bundle)
+        let nib = UINib(nibName: nibName, bundle: bundle)
         let view = nib.instantiateWithOwner(self, options: nil)[0] as! UIView
         return view
     }
+
     
-    func setupUI() {
+    // MARK: - methods
+    private func setup() {
         layer.masksToBounds = false
         layer.shadowRadius = 30
         layer.shadowColor = UIColor.blackColor().CGColor
         layer.shadowOpacity = 0.65
-
     }
 }

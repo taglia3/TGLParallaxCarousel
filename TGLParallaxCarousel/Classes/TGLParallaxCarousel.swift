@@ -8,89 +8,92 @@
 
 import UIKit
 
-@objc public protocol TGLParallaxCarouselDelegate {
-    func didMovetoPageAtIndex(index: Int)
-    optional func didTapOnItemAtIndex(index: Int, carousel: TGLParallaxCarousel)
-}
-
-
-@objc public protocol TGLParallaxCarouselDatasource {
-    func numberOfItemsInCarousel(carousel: TGLParallaxCarousel) ->Int
-    func viewForItemAtIndex(index: Int, carousel: TGLParallaxCarousel) ->TGLParallaxCarouselItem
-    
-}
-
 public enum CarouselType {
-    case Normal
-    case ThreeDimensional
+    case normal
+    case threeDimensional
 }
+
 
 public class TGLParallaxCarouselItem: UIView {
     var xDisp: CGFloat = 0
     var zDisp: CGFloat = 0
 }
 
+
+@objc public protocol TGLParallaxCarouselDelegate {
+    func numberOfItemsInCarouselView(carouselView: TGLParallaxCarousel) -> Int
+    func carouselView(carouselView: TGLParallaxCarousel, itemForRowAtIndex index: Int) -> TGLParallaxCarouselItem
+    func carouselView(carouselView: TGLParallaxCarousel, didSelectItemAtIndex index: Int)
+    func carouselView(carouselView: TGLParallaxCarousel, willDisplayItem item: TGLParallaxCarouselItem, forIndex index: Int)
+}
+
+
+@IBDesignable
 public class TGLParallaxCarousel: UIView {
     
-    @IBOutlet weak  var upperView: UIView!
-    @IBOutlet weak  var pageControl: UIPageControl!
-    
-    // MARK: - delegate & datasource
-    public weak var delegate: TGLParallaxCarouselDelegate?
-    public weak var datasource: TGLParallaxCarouselDatasource? {
-        didSet {
-            reloadData()
-        }
-    }
+    // MARK: - outlets
+    @IBOutlet private weak  var mainView: UIView!
+    @IBOutlet private weak  var pageControl: UIPageControl!
     
     // MARK: - properties
-    private var containerView: UIView!
-    private let ISPCarouselViewNibName = "TGLParallaxCarousel"
-    private var carouselItems = [TGLParallaxCarouselItem]()
-    
-    public var itemMargin: CGFloat = 0
-    public var bounceMargin: CGFloat = 10
-    public var selectedIndex = -1 {
-        didSet {
-            if selectedIndex < 0 { selectedIndex = 0 }
-            else if selectedIndex > (datasource!.numberOfItemsInCarousel(self) - 1 ) { selectedIndex = datasource!.numberOfItemsInCarousel(self) - 1 }
-            updatePageControl(selectedIndex)
-            self.delegate?.didMovetoPageAtIndex(selectedIndex)
-        }
-    }
-    
-    public var type: CarouselType = .ThreeDimensional {
+    public weak var delegate: TGLParallaxCarouselDelegate? {
         didSet {
             reloadData()
         }
     }
+    public var type: CarouselType = .threeDimensional {
+        didSet {
+            reloadData()
+        }
+    }
+    public var margin: CGFloat = 0  {
+        didSet {
+            reloadData()
+        }
+    }
+    public var bounceMargin: CGFloat = 10 {
+        didSet {
+            reloadData()
+        }
+    }
+    private var backingSelectedIndex = -1
+    public var selectedIndex: Int {
+        get {
+            return backingSelectedIndex
+        }
+        set{
+            backingSelectedIndex =  min(delegate!.numberOfItemsInCarouselView(self) - 1, max(0, newValue))
+            updatePageControl(selectedIndex)
+            self.delegate?.carouselView(self, didSelectItemAtIndex: selectedIndex)
+        }
+    }
     
+    private var containerView: UIView!
+    private let nibName = "TGLParallaxCarousel"
+    private var items = [TGLParallaxCarouselItem]()
     private var itemWidth: CGFloat?
     private var itemHeight: CGFloat?
-    
     private var isDecelerating = false
     private var parallaxFactor: CGFloat {
-        
-        if let _ = itemWidth { return ((itemWidth! + itemMargin) / xDisplacement ) }
+        if let _ = itemWidth { return ((itemWidth! + margin) / xDisplacement ) }
         else { return 1}
     }
     
     var xDisplacement: CGFloat {
-        if type == .Normal {
+        if type == .normal {
             if let _ = itemWidth { return itemWidth! }
             else { return 0 }
         }
-        else if type == .ThreeDimensional { return 50 }        // TODO
+        else if type == .threeDimensional { return 50 }        // TODO
         else { return 0 }
     }
     
     var zDisplacementFactor: CGFloat {
-        if type == .Normal { return 0 }
-        else if type == .ThreeDimensional { return 1 }
+        if type == .normal { return 0 }
+        else if type == .threeDimensional { return 1 }
         else { return 0 }
     }
     
-    // MARK: - gesture handling
     private var startGesturePoint: CGPoint = CGPointZero
     private var endGesturePoint: CGPoint = CGPointZero
     private var startTapGesturePoint: CGPoint = CGPointZero
@@ -105,8 +108,7 @@ public class TGLParallaxCarousel: UIView {
     
     
     
-    // MARK: init methods
-    
+    // MARK: - init
     override init(frame: CGRect) {
         super.init(frame: frame)
         xibSetup()
@@ -118,7 +120,6 @@ public class TGLParallaxCarousel: UIView {
     }
     
     func xibSetup() {
-        
         containerView = loadViewFromNib()
         containerView.frame = bounds
         containerView.autoresizingMask = [UIViewAutoresizing.FlexibleWidth, UIViewAutoresizing.FlexibleHeight]
@@ -126,114 +127,119 @@ public class TGLParallaxCarousel: UIView {
     }
     
     func loadViewFromNib() -> UIView {
-        
         let bundle = NSBundle(forClass: self.dynamicType)
-        let nib = UINib(nibName: ISPCarouselViewNibName, bundle: bundle)
+        let nib = UINib(nibName: nibName, bundle: bundle)
         let view = nib.instantiateWithOwner(self, options: nil)[0] as! UIView
         return view
     }
     
+    
+    // MARK: - view lifecycle
     override public func willMoveToSuperview(newSuperview: UIView?) {
         super.willMoveToSuperview(newSuperview)
-        
+        setupGestures()
+    }
+    
+    
+    // MARK: - setup
+    private func setupGestures() {
         let panGesture: UIPanGestureRecognizer = UIPanGestureRecognizer(target: self, action:#selector(detectPan(_:)))
-        upperView.addGestureRecognizer(panGesture)
-        
         let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action:#selector(detectTap(_:)))
-        upperView.addGestureRecognizer(tapGesture)
+        mainView.addGestureRecognizer(panGesture)
+        mainView.addGestureRecognizer(tapGesture)
     }
     
-    // MARK: setup
     func reloadData() {
-        guard let datasource = datasource else { return }
-
-        pageControl.numberOfPages = datasource.numberOfItemsInCarousel(self)
-        
-        for i in 0..<datasource.numberOfItemsInCarousel(self) {
-            addItem(datasource.viewForItemAtIndex(i, carousel: self))
-        }
+        guard let delegate = delegate else { return }
+    
         layoutIfNeeded()
+
+        pageControl.numberOfPages = delegate.numberOfItemsInCarouselView(self)
+        
+        for index in 0..<delegate.numberOfItemsInCarouselView(self) {
+            addItem(delegate.carouselView(self, itemForRowAtIndex: index))
+        }
+        
+        // move to selected index
     }
-    
-    
-    
-    // MARK: add item logic
     
     func addItem(item: TGLParallaxCarouselItem) {
+        if itemWidth == nil { itemWidth = CGRectGetWidth(item.frame) }
+        if itemHeight == nil { itemHeight = CGRectGetHeight(item.frame) }
         
-        if selectedIndex == -1 { selectedIndex = 0 }
-        
-        if itemWidth == nil { itemWidth = item.frame.size.width }
-        if itemHeight == nil { itemHeight = item.frame.size.height }
-        
-        // center item
-        item.center = CGPointMake(upperView.center.x, upperView.center.y + (upperView.frame.size.height - itemHeight!) / 2)
+        item.center = mainView.center
         
         dispatch_async(dispatch_get_main_queue()){
-            
-            self.upperView.layer.insertSublayer(item.layer, atIndex: UInt32(self.carouselItems.count))
-            
-            self.carouselItems.append(item)
-            
-            self.refreshItemsPosition(animated: true)
+            self.mainView.layer.insertSublayer(item.layer, atIndex: UInt32(self.items.count))
+            self.items.append(item)
+            self.refreshItemsPositionWithOffset(0, animated: true)
         }
     }
     
-    
-    
-    // MARK: refresh logic
-    
-    func refreshItemsPosition(animated animated: Bool) {
-        if carouselItems.count == 0 { return }
+    private func refreshItemsPositionWithOffset(offset: CGFloat, animated: Bool) {
+        guard items.count != 0  else { return }
         
-        if animated {
-            UIView.beginAnimations(nil, context: nil)
-            UIView.setAnimationCurve(.Linear)
-            UIView.setAnimationBeginsFromCurrentState(true)
-            UIView.setAnimationDuration(0.2)
-        }
-        
-        for (index, item) in carouselItems.enumerate() {
+        for (index, item) in items.enumerate() {
             
-            item.xDisp = xDisplacement * CGFloat(index)
-            item.zDisp = round(-fabs(item.xDisp) * zDisplacementFactor)
+            CATransaction.begin()
+            CATransaction.setDisableActions(true)
             
-            item.layer.anchorPoint = CGPointMake(0.5, 0.5)
-            item.layer.doubleSided = true
             
-            var t = CATransform3DIdentity;
-            t.m34 = -(1/500)
-            t = CATransform3DTranslate(t, item.xDisp, 0.0, item.zDisp);
+            let xDispNew = xDisplacement * CGFloat(index) - offset
+            let zDispNew = round(-fabs(xDispNew) * zDisplacementFactor)
+            
+            let translationX = CABasicAnimation(keyPath: "transform.translation.x")
+            translationX.fromValue = item.xDisp
+            translationX.toValue = xDispNew
+            
+            let translationZ = CABasicAnimation(keyPath: "transform.translation.z")
+            translationZ.fromValue = item.zDisp
+            translationZ.toValue = zDispNew
+            
+            let animationGroup = CAAnimationGroup()
+            animationGroup.duration = animated ? 0.33 : 0
+            animationGroup.repeatCount = 1
+            animationGroup.animations = [translationX, translationZ]
+            animationGroup.removedOnCompletion = false
+            animationGroup.fillMode = kCAFillModeRemoved
+            animationGroup.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+            item.layer.addAnimation(animationGroup, forKey: "myAnimation")
+            
+            var t = CATransform3DIdentity
+            t.m34 = -(1 / 500)
+            t = CATransform3DTranslate(t, xDispNew, 0.0, zDispNew)
             item.layer.transform = t;
-        }
-        
-        if animated {
-            UIView.commitAnimations()
+            
+            item.xDisp = xDispNew
+            item.zDisp = zDispNew
+            
+            CATransaction.commit()
         }
     }
     
     
-    
-    // MARK : handle gestures
-    
+    // MARK: - gestures handler
     func detectPan(recognizer:UIPanGestureRecognizer) {
+        
+        let targetView = recognizer.view
         
         switch recognizer.state {
         case .Began:
-            startGesturePoint = recognizer.locationInView(recognizer.view)
+            startGesturePoint = recognizer.locationInView(targetView)
             currentGestureVelocity = 0
             
         case .Changed:
-            currentGestureVelocity = recognizer.velocityInView(recognizer.view).x
-            endGesturePoint = recognizer.locationInView(recognizer.view)
+            currentGestureVelocity = recognizer.velocityInView(targetView).x
+            endGesturePoint = recognizer.locationInView(targetView)
             
-            let xOffset = (startGesturePoint.x - endGesturePoint.x ) * (1/parallaxFactor)
-
+            let xOffset = (startGesturePoint.x - endGesturePoint.x ) * (1 / parallaxFactor)
             moveCarousel(xOffset)
+                
             startGesturePoint = endGesturePoint
             
         case .Ended, .Cancelled, .Failed:
             startDecelerating()
+            
         case.Possible:
             break
         }
@@ -242,48 +248,46 @@ public class TGLParallaxCarousel: UIView {
     func detectTap(recognizer:UITapGestureRecognizer) {
         
         let targetPoint: CGPoint = recognizer.locationInView(recognizer.view)
-        currentTargetLayer = upperView.layer.hitTest(targetPoint)!
-        let targetItem = findItemOnScreen()
+        currentTargetLayer = mainView.layer.hitTest(targetPoint)!
         
-        if targetItem != nil {
+        guard let targetItem = findItemOnScreen() else { return }
             
-            let firstItemOffset = carouselItems[0].xDisp - targetItem!.xDisp
-            let tappedIndex = -Int(round(firstItemOffset / xDisplacement))
-            
-            if targetItem!.xDisp == 0 {
-                self.delegate?.didTapOnItemAtIndex!(tappedIndex, carousel: self)
-            } else {
-                // a seconda del valore di targetItem!.xDisp cambio l'offset e centro sull'item
-                let offsetToAdd = xDisplacement * -CGFloat(tappedIndex - selectedIndex)
-                selectedIndex = tappedIndex
-                moveCarousel(-offsetToAdd)
-            }
+        let firstItemOffset = (items.first?.xDisp ?? 0) - targetItem.xDisp
+        let tappedIndex = -Int(round(firstItemOffset / xDisplacement))
+        
+        if targetItem.xDisp == 0 {
+            self.delegate?.carouselView(self, didSelectItemAtIndex: tappedIndex)
+        } else {
+            // a seconda del valore di targetItem!.xDisp cambio l'offset e centro sull'item
+            let offsetToAdd = xDisplacement * -CGFloat(tappedIndex - selectedIndex)
+            selectedIndex = tappedIndex
+            moveCarousel(-offsetToAdd)
         }
     }
     
     
-    // MARK: find item
-    func findItemOnScreen() ->TGLParallaxCarouselItem? {
+    // MARK: - find item
+    private func findItemOnScreen() -> TGLParallaxCarouselItem? {
         currentFoundItem = nil
 
-        for i in 0..<carouselItems.count {
-            currentItem = carouselItems[i]
-            checkInSubviews(currentItem!)
+        for item in items {
+            currentItem = item
+            checkInSubviews(item)
         }
         return currentFoundItem
     }
     
-    func checkInSubviews(view:UIView){
+    private func checkInSubviews(view: UIView) {
         let subviews = view.subviews
-        if subviews.count == 0 { return }
+        if subviews.isEmpty { return }
         
-        for subview : AnyObject in subviews{
+        for subview : AnyObject in subviews {
             if checkView(subview as! UIView) { return }
             checkInSubviews(subview as! UIView)
         }
     }
     
-    func checkView(view: UIView) ->Bool {
+    private func checkView(view: UIView) -> Bool {
         if view.layer.isEqual(currentTargetLayer) {
             currentFoundItem = currentItem
             return true
@@ -295,25 +299,21 @@ public class TGLParallaxCarousel: UIView {
     
     // MARK: moving logic
     func moveCarousel(offset: CGFloat) {
-        
-        if (offset == 0) { return }
+        guard offset != 0 else { return }
         
         var detected = false
         
-        for i in 0..<carouselItems.count {
-            
-            let item: TGLParallaxCarouselItem = carouselItems[i]
+        for (index, item) in items.enumerate() {
             
             // check bondaries
-            if carouselItems[0].xDisp >= bounceMargin {
+            if items.first?.xDisp >= bounceMargin {
                 detected = true
                 if offset < 0 {
                     if loopFinished { return }
                 }
             }
             
-            let lastItemIndex = datasource!.numberOfItemsInCarousel(self) - 1
-            if carouselItems[lastItemIndex].xDisp <= -bounceMargin {
+            if items.last?.xDisp <= -bounceMargin {
                 detected = true
                 if offset > 0 {
                     if loopFinished { return }
@@ -324,26 +324,21 @@ public class TGLParallaxCarousel: UIView {
             item.xDisp = item.xDisp - offset
             item.zDisp =  -fabs(item.xDisp) * zDisplacementFactor
             
-            let factor = self.factorForXDisp(item.zDisp)
+            let factor = factorForXDisp(item.zDisp)
             
-            dispatch_async(dispatch_get_main_queue(), {
-                
-                UIView.animateWithDuration(0.2, animations: { () -> Void in
-                    
-                    var t = CATransform3DIdentity;
-                    t.m34 = -(1/500)
-                    t = CATransform3DTranslate(t, item.xDisp * factor , 0.0, item.zDisp);
-                    item.layer.transform = t;
-                    
+            dispatch_async(dispatch_get_main_queue()) {
+                UIView.animateWithDuration(0.33, animations: { () -> Void in
+                    var t = CATransform3DIdentity
+                    t.m34 = -(1 / 500)
+                    item.layer.transform = CATransform3DTranslate(t, item.xDisp * factor , 0.0, item.zDisp)
                 })
-            })
+            }
             
-            if i == carouselItems.count - 1 && detected { loopFinished = true }
-            else { loopFinished = false }
+            loopFinished = (index == items.count - 1 && detected)
         }
     }
     
-    func factorForXDisp(x: CGFloat) -> CGFloat {
+    private func factorForXDisp(x: CGFloat) -> CGFloat {
         
         let pA = CGPointMake(xDisplacement / 2, parallaxFactor)
         let pB = CGPointMake(xDisplacement, 1)
@@ -362,13 +357,12 @@ public class TGLParallaxCarousel: UIView {
     }
     
     
-    // MARK: helper functions
+    // MARK: - utils
     func startDecelerating() {
-        
         isDecelerating = true
         
         let distance = decelerationDistance()
-        let offsetItems = carouselItems[0].xDisp
+        let offsetItems = items.first?.xDisp ?? 0
         let endOffsetItems = offsetItems + distance
         
         selectedIndex = -Int(round(endOffsetItems / xDisplacement))
@@ -378,18 +372,14 @@ public class TGLParallaxCarousel: UIView {
         isDecelerating = false
     }
     
-    
-    func decelerationDistance() ->CGFloat {
-        let acceleration = -currentGestureVelocity * decelerationMultiplier;
-        
-        if acceleration == 0 { return 0 }
-        else { return -pow(currentGestureVelocity, 2.0) / (2.0 * acceleration); }
+    private func decelerationDistance() ->CGFloat {
+        let acceleration = -currentGestureVelocity * decelerationMultiplier
+        return (acceleration == 0) ? 0 : (-pow(currentGestureVelocity, 2.0) / (2.0 * acceleration))
     }
     
     
-    // MARK: page control update
+    // MARK: - page control handler
     func updatePageControl(index: Int) {
         pageControl.currentPage = index
     }
-    
 }
