@@ -63,8 +63,7 @@ public class TGLParallaxCarousel: UIView {
         }
         set{
             backingSelectedIndex =  min(delegate!.numberOfItemsInCarouselView(self) - 1, max(0, newValue))
-            updatePageControl(selectedIndex)
-            self.delegate?.carouselView(self, didSelectItemAtIndex: selectedIndex)
+            moveToIndex(selectedIndex)
         }
     }
     
@@ -159,8 +158,6 @@ public class TGLParallaxCarousel: UIView {
         for index in 0..<delegate.numberOfItemsInCarouselView(self) {
             addItem(delegate.carouselView(self, itemForRowAtIndex: index))
         }
-        
-        // move to selected index
     }
     
     func addItem(item: TGLParallaxCarouselItem) {
@@ -169,14 +166,12 @@ public class TGLParallaxCarousel: UIView {
         
         item.center = mainView.center
         
-        dispatch_async(dispatch_get_main_queue()){
             self.mainView.layer.insertSublayer(item.layer, atIndex: UInt32(self.items.count))
             self.items.append(item)
-            self.refreshItemsPositionWithOffset(0, animated: true)
-        }
+            self.resetItemsPosition(animated: true)
     }
     
-    private func refreshItemsPositionWithOffset(offset: CGFloat, animated: Bool) {
+    private func resetItemsPosition(animated animated: Bool) {
         guard items.count != 0  else { return }
         
         for (index, item) in items.enumerate() {
@@ -185,7 +180,7 @@ public class TGLParallaxCarousel: UIView {
             CATransaction.setDisableActions(true)
             
             
-            let xDispNew = xDisplacement * CGFloat(index) - offset
+            let xDispNew = xDisplacement * CGFloat(index)
             let zDispNew = round(-fabs(xDispNew) * zDisplacementFactor)
             
             let translationX = CABasicAnimation(keyPath: "transform.translation.x")
@@ -257,11 +252,9 @@ public class TGLParallaxCarousel: UIView {
         
         if targetItem.xDisp == 0 {
             self.delegate?.carouselView(self, didSelectItemAtIndex: tappedIndex)
-        } else {
-            // a seconda del valore di targetItem!.xDisp cambio l'offset e centro sull'item
-            let offsetToAdd = xDisplacement * -CGFloat(tappedIndex - selectedIndex)
+        }
+        else {
             selectedIndex = tappedIndex
-            moveCarousel(-offsetToAdd)
         }
     }
     
@@ -338,6 +331,14 @@ public class TGLParallaxCarousel: UIView {
         }
     }
     
+    private func moveToIndex(index: Int) {
+        let offsetItems = items.first?.xDisp ?? 0
+        let offsetToAdd = xDisplacement * -CGFloat(selectedIndex) - offsetItems
+        moveCarousel(-offsetToAdd)
+        updatePageControl(selectedIndex)
+        delegate?.carouselView(self, didSelectItemAtIndex: selectedIndex)
+    }
+    
     private func factorForXDisp(x: CGFloat) -> CGFloat {
         
         let pA = CGPointMake(xDisplacement / 2, parallaxFactor)
@@ -366,9 +367,6 @@ public class TGLParallaxCarousel: UIView {
         let endOffsetItems = offsetItems + distance
         
         selectedIndex = -Int(round(endOffsetItems / xDisplacement))
-        
-        let offsetToAdd = xDisplacement * -CGFloat(selectedIndex) - offsetItems
-        moveCarousel(-offsetToAdd)
         isDecelerating = false
     }
     

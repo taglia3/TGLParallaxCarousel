@@ -25,6 +25,7 @@ class ViewController: UIViewController {
         carouselView.delegate = self
         carouselView.margin = 10
         carouselView.selectedIndex = 2
+        carouselView.type = .normal
     }
     
     override func prefersStatusBarHidden() -> Bool {
