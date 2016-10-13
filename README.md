@@ -17,8 +17,16 @@ A lightweight 3D Linear Carousel with parallax effect
 TGLParallaxCarousel is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
+Swift 3:
+
 ```ruby
-pod "TGLParallaxCarousel"
+pod 'TGLParallaxCarousel'
+```
+
+Swift 2.2:
+
+```ruby
+pod 'TGLParallaxCarousel' ', '~> 0.3'
 ```
 
 
@@ -36,33 +44,33 @@ override func viewDidLoad() {
 super.viewDidLoad()
 
 carouselView.delegate = self
-carouselView.itemMargin = 10
+carouselView.margin = 10
+carouselView.selectedIndex = 2
+carouselView.type = .threeDimensional
 }
 ```
 
 3) Conform to delegate
 
 ```swift
-// MARK: - TGLParallaxCarouselDelegate
 extension ViewController: TGLParallaxCarouselDelegate {
 
-func numberOfItemsInCarouselView(carouselView: TGLParallaxCarousel) -> Int {
+func numberOfItemsInCarouselView(_ carouselView: TGLParallaxCarousel) -> Int {
 return 5
 }
 
-func carouselView(carouselView: TGLParallaxCarousel, itemForRowAtIndex index: Int) -> TGLParallaxCarouselItem {
-return CustomView(frame: CGRectMake(0, 0, 300, 150), number: index)
+func carouselView(_ carouselView: TGLParallaxCarousel, itemForRowAtIndex index: Int) -> TGLParallaxCarouselItem {
+return CustomView(frame: CGRect(x: 0, y: 0, width: 300, height: 150) , number: index)
 }
 
-func carouselView(carouselView: TGLParallaxCarousel, didSelectItemAtIndex index: Int) {
+func carouselView(_ carouselView: TGLParallaxCarousel, didSelectItemAtIndex index: Int) {
 print("Tap on item at index \(index)")
 }
 
-func carouselView(carouselView: TGLParallaxCarousel, willDisplayItem item: TGLParallaxCarouselItem, forIndex index: Int) {
+func carouselView(_ carouselView: TGLParallaxCarousel, willDisplayItem item: TGLParallaxCarouselItem, forIndex index: Int) {
 print("")
 }
 }
-
 ```
 
 4) Enjoy!
@@ -70,7 +78,9 @@ print("")
 
 ## Author
 
-taglia3, the.taglia3@gmail.com
+taglia3, matteo.tagliafico@gmail.com
+
+[LinkedIn](https://www.linkedin.com/in/matteo-tagliafico-ba6985a3), Matteo Tagliafico
 
 ## License
 
