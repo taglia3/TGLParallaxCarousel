@@ -70,7 +70,7 @@ open class TGLParallaxCarousel: UIView {
     
     fileprivate var containerView: UIView!
     fileprivate let nibName = "TGLParallaxCarousel"
-    fileprivate var items = [TGLParallaxCarouselItem]()
+    open var items = [TGLParallaxCarouselItem]()
     fileprivate var itemWidth: CGFloat?
     fileprivate var itemHeight: CGFloat?
     fileprivate var isDecelerating = false
@@ -170,6 +170,7 @@ open class TGLParallaxCarousel: UIView {
             self.items.append(item)
             self.resetItemsPosition(true)
     }
+    
     
     fileprivate func resetItemsPosition(_ animated: Bool) {
         guard items.count != 0  else { return }
