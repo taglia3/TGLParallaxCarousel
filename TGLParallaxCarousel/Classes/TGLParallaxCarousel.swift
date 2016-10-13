@@ -107,7 +107,6 @@ open class TGLParallaxCarousel: UIView {
     fileprivate var currentFoundItem: TGLParallaxCarouselItem?
     
     
-    
     // MARK: - init
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -144,9 +143,9 @@ open class TGLParallaxCarousel: UIView {
     // MARK: - setup
     fileprivate func setupGestures() {
         let panGesture: UIPanGestureRecognizer = UIPanGestureRecognizer(target: self, action:#selector(detectPan(_:)))
-//        let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action:#selector(detectTap(_:)))
+        let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action:#selector(detectTap(_:)))
         mainView.addGestureRecognizer(panGesture)
-//        mainView.addGestureRecognizer(tapGesture)
+        mainView.addGestureRecognizer(tapGesture)
     }
     
     func reloadData() {

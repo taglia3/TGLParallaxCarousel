@@ -21,14 +21,16 @@ class ViewController: UIViewController {
         setupCarousel()
     }
     
-    private func setupCarousel() {
+    
+    // MARK: - methods
+    fileprivate func setupCarousel() {
         carouselView.delegate = self
         carouselView.margin = 10
         carouselView.selectedIndex = 2
-        carouselView.type = .normal
+        carouselView.type = .threeDimensional
     }
     
-    override func prefersStatusBarHidden() -> Bool {
+    override var prefersStatusBarHidden : Bool {
         return true
     }
 }
@@ -37,19 +39,19 @@ class ViewController: UIViewController {
 // MARK: - TGLParallaxCarouselDelegate
 extension ViewController: TGLParallaxCarouselDelegate {
     
-    func numberOfItemsInCarouselView(carouselView: TGLParallaxCarousel) -> Int {
+    func numberOfItemsInCarouselView(_ carouselView: TGLParallaxCarousel) -> Int {
         return 5
     }
     
-    func carouselView(carouselView: TGLParallaxCarousel, itemForRowAtIndex index: Int) -> TGLParallaxCarouselItem {
-        return CustomView(frame: CGRectMake(0, 0, 300, 150), number: index)
+    func carouselView(_ carouselView: TGLParallaxCarousel, itemForRowAtIndex index: Int) -> TGLParallaxCarouselItem {
+        return CustomView(frame: CGRect(x: 0, y: 0, width: 300, height: 150) , number: index)
     }
 
-    func carouselView(carouselView: TGLParallaxCarousel, didSelectItemAtIndex index: Int) {
+    func carouselView(_ carouselView: TGLParallaxCarousel, didSelectItemAtIndex index: Int) {
         print("Tap on item at index \(index)")
     }
     
-    func carouselView(carouselView: TGLParallaxCarousel, willDisplayItem item: TGLParallaxCarouselItem, forIndex index: Int) {
+    func carouselView(_ carouselView: TGLParallaxCarousel, willDisplayItem item: TGLParallaxCarouselItem, forIndex index: Int) {
         print("")
     }
 }

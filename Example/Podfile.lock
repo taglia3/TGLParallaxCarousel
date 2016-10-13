@@ -1,16 +1,16 @@
 PODS:
-  - TGLParallaxCarousel (0.2)
+  - TGLParallaxCarousel (1.0.0)
 
 DEPENDENCIES:
   - TGLParallaxCarousel (from `../`)
 
 EXTERNAL SOURCES:
   TGLParallaxCarousel:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
-  TGLParallaxCarousel: 00905c589bca7991508f77b79132afe98a1d9ed3
+  TGLParallaxCarousel: 94c8b4f271f0c1a1a3d973da1206f31771255e44
 
 PODFILE CHECKSUM: 2004e28ee12f76931fa23473286df144458a6d08
 
-COCOAPODS: 1.0.0.rc.1
+COCOAPODS: 1.1.0.rc.2

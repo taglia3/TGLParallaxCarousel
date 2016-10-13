@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'TGLParallaxCarousel'
-  s.version          = '0.3'
+  s.version          = '1.0.0'
   s.summary          = 'A lightweight 3D Linear Carousel with parallax effect.'
   s.description      = <<-DESC
 A lightweight 3D Linear Carousel with parallax effect. Use this custom View to create beatiful effects.

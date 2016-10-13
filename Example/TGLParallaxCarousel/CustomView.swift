@@ -13,11 +13,11 @@ import TGLParallaxCarousel
 class CustomView: TGLParallaxCarouselItem {
     
     // MARK: - outlets
-    @IBOutlet private weak var numberLabel: UILabel!
+    @IBOutlet fileprivate weak var numberLabel: UILabel!
     
     // MARK: - properties
-    private var containerView: UIView!
-    private let nibName = "CustomView"
+    fileprivate var containerView: UIView!
+    fileprivate let nibName = "CustomView"
     
     @IBInspectable
     var number: Int = 0 {
@@ -48,23 +48,23 @@ class CustomView: TGLParallaxCarouselItem {
     func xibSetup() {
         containerView = loadViewFromNib()
         containerView.frame = bounds
-        containerView.autoresizingMask = [UIViewAutoresizing.FlexibleWidth, UIViewAutoresizing.FlexibleHeight]
+        containerView.autoresizingMask = [UIViewAutoresizing.flexibleWidth, UIViewAutoresizing.flexibleHeight]
         addSubview(containerView)
     }
     
     func loadViewFromNib() -> UIView {
-        let bundle = NSBundle(forClass: self.dynamicType)
+        let bundle = Bundle(for: type(of: self))
         let nib = UINib(nibName: nibName, bundle: bundle)
-        let view = nib.instantiateWithOwner(self, options: nil)[0] as! UIView
+        let view = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
         return view
     }
 
     
     // MARK: - methods
-    private func setup() {
+    fileprivate func setup() {
         layer.masksToBounds = false
         layer.shadowRadius = 30
-        layer.shadowColor = UIColor.blackColor().CGColor
+        layer.shadowColor = UIColor.black.cgColor
         layer.shadowOpacity = 0.65
     }
 }
