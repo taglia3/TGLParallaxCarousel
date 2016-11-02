@@ -154,7 +154,7 @@ open class TGLParallaxCarousel: UIView {
             addItem(delegate.carouselView(self, itemForRowAtIndex: index))
         }
         
-        moveToIndex(index: 1)
+        moveToIndex(1)
     }
     
     func addItem(_ item: TGLParallaxCarouselItem) {
