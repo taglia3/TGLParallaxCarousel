@@ -248,7 +248,8 @@ open class TGLParallaxCarousel: UIView {
             
         let firstItemOffset = (items.first?.xDisp ?? 0) - targetItem.xDisp
         let tappedIndex = -Int(round(firstItemOffset / xDisplacement))
-        
+        self.delegate?.carouselView(self, didSelectItemAtIndex: tappedIndex)
+
         if targetItem.xDisp == 0 {
             self.delegate?.carouselView(self, didSelectItemAtIndex: tappedIndex)
         }
