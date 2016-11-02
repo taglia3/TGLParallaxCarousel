@@ -34,12 +34,10 @@ open class TGLParallaxCarousel: UIView {
     
     // MARK: - outlets
     @IBOutlet fileprivate weak  var mainView: UIView!
-    @IBOutlet fileprivate weak  var pageControl: UIPageControl!
     
     // MARK: - properties
     open weak var delegate: TGLParallaxCarouselDelegate? {
         didSet {
-            reloadData()
         }
     }
     open var type: CarouselType = .threeDimensional {
@@ -49,12 +47,10 @@ open class TGLParallaxCarousel: UIView {
     }
     open var margin: CGFloat = 0  {
         didSet {
-            reloadData()
         }
     }
     open var bounceMargin: CGFloat = 10 {
         didSet {
-            reloadData()
         }
     }
     fileprivate var backingSelectedIndex = -1
@@ -153,11 +149,12 @@ open class TGLParallaxCarousel: UIView {
     
         layoutIfNeeded()
 
-        pageControl.numberOfPages = delegate.numberOfItemsInCarouselView(self)
         
         for index in 0..<delegate.numberOfItemsInCarouselView(self) {
             addItem(delegate.carouselView(self, itemForRowAtIndex: index))
         }
+        
+        moveToIndex(index: 1)
     }
     
     func addItem(_ item: TGLParallaxCarouselItem) {
@@ -336,7 +333,6 @@ open class TGLParallaxCarousel: UIView {
         let offsetItems = items.first?.xDisp ?? 0
         let offsetToAdd = xDisplacement * -CGFloat(selectedIndex) - offsetItems
         moveCarousel(-offsetToAdd)
-        updatePageControl(selectedIndex)
         delegate?.carouselView(self, didSelectItemAtIndex: selectedIndex)
     }
     
@@ -374,11 +370,5 @@ open class TGLParallaxCarousel: UIView {
     fileprivate func decelerationDistance() ->CGFloat {
         let acceleration = -currentGestureVelocity * decelerationMultiplier
         return (acceleration == 0) ? 0 : (-pow(currentGestureVelocity, 2.0) / (2.0 * acceleration))
-    }
-    
-    
-    // MARK: - page control handler
-    func updatePageControl(_ index: Int) {
-        pageControl.currentPage = index
     }
 }
