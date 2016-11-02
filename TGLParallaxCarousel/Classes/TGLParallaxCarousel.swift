@@ -334,7 +334,6 @@ open class TGLParallaxCarousel: UIView {
         let offsetItems = items.first?.xDisp ?? 0
         let offsetToAdd = xDisplacement * -CGFloat(selectedIndex) - offsetItems
         moveCarousel(-offsetToAdd)
-        delegate?.carouselView(self, didSelectItemAtIndex: selectedIndex)
     }
     
     fileprivate func factorForXDisp(_ x: CGFloat) -> CGFloat {
