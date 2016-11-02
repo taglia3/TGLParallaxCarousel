@@ -142,7 +142,7 @@ open class TGLParallaxCarousel: UIView {
         let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action:#selector(detectTap(_:)))
         mainView.addGestureRecognizer(panGesture)
         mainView.addGestureRecognizer(tapGesture)
-        tapGesture.requireGestureRecognizerToFail(panGesture)
+        tapGesture.require(toFail: panGesture)
     }
     
     func reloadData() {
