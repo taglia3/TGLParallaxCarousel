@@ -34,7 +34,6 @@ open class TGLParallaxCarousel: UIView {
     
     // MARK: - outlets
     @IBOutlet fileprivate weak  var mainView: UIView!
-    @IBOutlet fileprivate weak  var pageControl: UIPageControl!
     
     // MARK: - properties
     open weak var delegate: TGLParallaxCarouselDelegate? {
@@ -152,8 +151,6 @@ open class TGLParallaxCarousel: UIView {
         guard let delegate = delegate else { return }
     
         layoutIfNeeded()
-
-        pageControl.numberOfPages = delegate.numberOfItemsInCarouselView(self)
         
         for index in 0..<delegate.numberOfItemsInCarouselView(self) {
             addItem(delegate.carouselView(self, itemForRowAtIndex: index))
@@ -336,7 +333,6 @@ open class TGLParallaxCarousel: UIView {
         let offsetItems = items.first?.xDisp ?? 0
         let offsetToAdd = xDisplacement * -CGFloat(selectedIndex) - offsetItems
         moveCarousel(-offsetToAdd)
-        updatePageControl(selectedIndex)
         delegate?.carouselView(self, didSelectItemAtIndex: selectedIndex)
     }
     
@@ -376,9 +372,4 @@ open class TGLParallaxCarousel: UIView {
         return (acceleration == 0) ? 0 : (-pow(currentGestureVelocity, 2.0) / (2.0 * acceleration))
     }
     
-    
-    // MARK: - page control handler
-    func updatePageControl(_ index: Int) {
-        pageControl.currentPage = index
-    }
 }
