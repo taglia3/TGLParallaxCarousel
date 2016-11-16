@@ -34,10 +34,12 @@ open class TGLParallaxCarousel: UIView {
     
     // MARK: - outlets
     @IBOutlet fileprivate weak  var mainView: UIView!
+    @IBOutlet fileprivate weak  var pageControl: UIPageControl!
     
     // MARK: - properties
     open weak var delegate: TGLParallaxCarouselDelegate? {
         didSet {
+            reloadData()
         }
     }
     open var type: CarouselType = .threeDimensional {
@@ -47,10 +49,12 @@ open class TGLParallaxCarousel: UIView {
     }
     open var margin: CGFloat = 0  {
         didSet {
+            reloadData()
         }
     }
     open var bounceMargin: CGFloat = 10 {
         didSet {
+            reloadData()
         }
     }
     fileprivate var backingSelectedIndex = -1
@@ -142,7 +146,6 @@ open class TGLParallaxCarousel: UIView {
         let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action:#selector(detectTap(_:)))
         mainView.addGestureRecognizer(panGesture)
         mainView.addGestureRecognizer(tapGesture)
-        tapGesture.require(toFail: panGesture)
     }
     
     func reloadData() {
@@ -150,12 +153,11 @@ open class TGLParallaxCarousel: UIView {
     
         layoutIfNeeded()
 
+        pageControl.numberOfPages = delegate.numberOfItemsInCarouselView(self)
         
         for index in 0..<delegate.numberOfItemsInCarouselView(self) {
             addItem(delegate.carouselView(self, itemForRowAtIndex: index))
         }
-        
-        moveToIndex(1)
     }
     
     func addItem(_ item: TGLParallaxCarouselItem) {
@@ -200,7 +202,7 @@ open class TGLParallaxCarousel: UIView {
             item.layer.add(animationGroup, forKey: "myAnimation")
             
             var t = CATransform3DIdentity
-            t.m34 = -(1 / 500)
+            t.m34 = (-(1 / 500)) as CGFloat
             t = CATransform3DTranslate(t, xDispNew, 0.0, zDispNew)
             item.layer.transform = t;
             
@@ -248,8 +250,7 @@ open class TGLParallaxCarousel: UIView {
             
         let firstItemOffset = (items.first?.xDisp ?? 0) - targetItem.xDisp
         let tappedIndex = -Int(round(firstItemOffset / xDisplacement))
-        self.delegate?.carouselView(self, didSelectItemAtIndex: tappedIndex)
-
+        
         if targetItem.xDisp == 0 {
             self.delegate?.carouselView(self, didSelectItemAtIndex: tappedIndex)
         }
@@ -322,7 +323,7 @@ open class TGLParallaxCarousel: UIView {
             DispatchQueue.main.async() {
                 UIView.animate(withDuration: 0.33, animations: { () -> Void in
                     var t = CATransform3DIdentity
-                    t.m34 = -(1 / 500)
+                    t.m34 = (-(1 / 500)) as CGFloat
                     item.layer.transform = CATransform3DTranslate(t, item.xDisp * factor , 0.0, item.zDisp)
                 })
             }
@@ -335,6 +336,8 @@ open class TGLParallaxCarousel: UIView {
         let offsetItems = items.first?.xDisp ?? 0
         let offsetToAdd = xDisplacement * -CGFloat(selectedIndex) - offsetItems
         moveCarousel(-offsetToAdd)
+        updatePageControl(selectedIndex)
+        delegate?.carouselView(self, didSelectItemAtIndex: selectedIndex)
     }
     
     fileprivate func factorForXDisp(_ x: CGFloat) -> CGFloat {
@@ -371,5 +374,11 @@ open class TGLParallaxCarousel: UIView {
     fileprivate func decelerationDistance() ->CGFloat {
         let acceleration = -currentGestureVelocity * decelerationMultiplier
         return (acceleration == 0) ? 0 : (-pow(currentGestureVelocity, 2.0) / (2.0 * acceleration))
+    }
+    
+    
+    // MARK: - page control handler
+    func updatePageControl(_ index: Int) {
+        pageControl.currentPage = index
     }
 }
