@@ -1,5 +1,5 @@
 //
-//  
+//
 
 //  CarouselViewExample
 //
@@ -147,9 +147,9 @@ open class TGLParallaxCarousel: UIView {
     
     func reloadData() {
         guard let delegate = delegate else { return }
-    
+        
         layoutIfNeeded()
-
+        
         
         for index in 0..<delegate.numberOfItemsInCarouselView(self) {
             addItem(delegate.carouselView(self, itemForRowAtIndex: index))
@@ -164,9 +164,9 @@ open class TGLParallaxCarousel: UIView {
         
         item.center = mainView.center
         
-            self.mainView.layer.insertSublayer(item.layer, at: UInt32(self.items.count))
-            self.items.append(item)
-            self.resetItemsPosition(true)
+        self.mainView.layer.insertSublayer(item.layer, at: UInt32(self.items.count))
+        self.items.append(item)
+        self.resetItemsPosition(true)
     }
     
     
@@ -200,7 +200,7 @@ open class TGLParallaxCarousel: UIView {
             item.layer.add(animationGroup, forKey: "myAnimation")
             
             var t = CATransform3DIdentity
-            t.m34 = -(1 / 500)
+            t.m34 = (-(1 / 500)) as CGFloat
             t = CATransform3DTranslate(t, xDispNew, 0.0, zDispNew)
             item.layer.transform = t;
             
@@ -228,7 +228,7 @@ open class TGLParallaxCarousel: UIView {
             
             let xOffset = (startGesturePoint.x - endGesturePoint.x ) * (1 / parallaxFactor)
             moveCarousel(xOffset)
-                
+            
             startGesturePoint = endGesturePoint
             
         case .ended, .cancelled, .failed:
@@ -245,11 +245,11 @@ open class TGLParallaxCarousel: UIView {
         currentTargetLayer = mainView.layer.hitTest(targetPoint)!
         
         guard let targetItem = findItemOnScreen() else { return }
-            
+        
         let firstItemOffset = (items.first?.xDisp ?? 0) - targetItem.xDisp
         let tappedIndex = -Int(round(firstItemOffset / xDisplacement))
         self.delegate?.carouselView(self, didSelectItemAtIndex: tappedIndex)
-
+        
         if targetItem.xDisp == 0 {
             self.delegate?.carouselView(self, didSelectItemAtIndex: tappedIndex)
         }
@@ -262,7 +262,7 @@ open class TGLParallaxCarousel: UIView {
     // MARK: - find item
     fileprivate func findItemOnScreen() -> TGLParallaxCarouselItem? {
         currentFoundItem = nil
-
+        
         for item in items {
             currentItem = item
             checkInSubviews(item)
@@ -322,7 +322,7 @@ open class TGLParallaxCarousel: UIView {
             DispatchQueue.main.async() {
                 UIView.animate(withDuration: 0.33, animations: { () -> Void in
                     var t = CATransform3DIdentity
-                    t.m34 = -(1 / 500)
+                    t.m34 = (-(1 / 500)) as CGFloat
                     item.layer.transform = CATransform3DTranslate(t, item.xDisp * factor , 0.0, item.zDisp)
                 })
             }
