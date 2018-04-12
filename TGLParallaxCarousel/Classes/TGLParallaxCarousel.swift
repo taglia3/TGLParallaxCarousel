@@ -126,7 +126,7 @@ open class TGLParallaxCarousel: UIView {
     }
     
     func loadViewFromNib() -> UIView {
-        let bundle = Bundle(for: type(of: self))
+        let bundle = Bundle(for: Swift.type(of: self))
         let nib = UINib(nibName: nibName, bundle: bundle)
         let view = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
         return view
@@ -215,7 +215,7 @@ open class TGLParallaxCarousel: UIView {
     
     
     // MARK: - gestures handler
-    func detectPan(_ recognizer:UIPanGestureRecognizer) {
+    @objc func detectPan(_ recognizer:UIPanGestureRecognizer) {
         
         let targetView = recognizer.view
         
@@ -241,7 +241,7 @@ open class TGLParallaxCarousel: UIView {
         }
     }
     
-    func detectTap(_ recognizer:UITapGestureRecognizer) {
+    @objc func detectTap(_ recognizer:UITapGestureRecognizer) {
         
         let targetPoint: CGPoint = recognizer.location(in: recognizer.view)
         currentTargetLayer = mainView.layer.hitTest(targetPoint)!
