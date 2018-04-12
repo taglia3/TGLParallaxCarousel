@@ -14,6 +14,10 @@ public enum CarouselType {
     case threeDimensional
 }
 
+public enum CarouselMode {
+    case linear
+    case circular
+}
 
 open class TGLParallaxCarouselItem: UIView {
     var xDisp: CGFloat = 0
@@ -54,6 +58,12 @@ open class TGLParallaxCarousel: UIView {
     }
     open var bounceMargin: CGFloat = 10 {
         didSet {
+            reloadData()
+        }
+    }
+    //Add Mode for circular / linear mode un stack views
+    open var mode: CarouselMode = .linear{
+        didSet{
             reloadData()
         }
     }
@@ -155,6 +165,11 @@ open class TGLParallaxCarousel: UIView {
 
         pageControl.numberOfPages = delegate.numberOfItemsInCarouselView(self)
         
+        //Condition if the mode is linear or circular
+        if(mode == .linear){
+            guard self.items.count < delegate.numberOfItemsInCarouselView(self) else { return }
+        }
+    
         for index in 0..<delegate.numberOfItemsInCarouselView(self) {
             addItem(delegate.carouselView(self, itemForRowAtIndex: index))
         }
@@ -382,6 +397,7 @@ open class TGLParallaxCarousel: UIView {
         pageControl.currentPage = index
     }
     
+    //Add method to hide page control
     open func setPageControlHidden(hide: Bool){
         self.pageControl.isHidden = hide
     }
