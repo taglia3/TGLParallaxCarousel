@@ -381,4 +381,8 @@ open class TGLParallaxCarousel: UIView {
     func updatePageControl(_ index: Int) {
         pageControl.currentPage = index
     }
+    
+    open func setPageControlHidden(hide: Bool){
+        self.pageControl.isHidden = hide
+    }
 }
