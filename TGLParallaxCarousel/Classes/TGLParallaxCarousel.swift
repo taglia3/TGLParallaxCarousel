@@ -67,6 +67,7 @@ open class TGLParallaxCarousel: UIView {
             reloadData()
         }
     }
+    
     fileprivate var backingSelectedIndex = -1
     open var selectedIndex: Int {
         get {
@@ -231,6 +232,10 @@ open class TGLParallaxCarousel: UIView {
     
     // MARK: - gestures handler
     @objc func detectPan(_ recognizer:UIPanGestureRecognizer) {
+        //manejo de esto
+        guard abs(recognizer.velocity(in: self).x) > abs(recognizer.velocity(in: self).y) else{
+            return
+        }
         
         let targetView = recognizer.view
         
