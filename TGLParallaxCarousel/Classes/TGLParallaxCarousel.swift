@@ -68,7 +68,7 @@ open class TGLParallaxCarousel: UIView {
         }
     }
     
-    fileprivate var backingSelectedIndex = -1
+    fileprivate var backingSelectedIndex = 0
     open var selectedIndex: Int {
         get {
             return backingSelectedIndex
@@ -160,20 +160,27 @@ open class TGLParallaxCarousel: UIView {
     }
     
     open func reloadData() {
+        self.items.removeAll()
+        
+        selectedIndex = 0
+        
         guard let delegate = delegate else { return }
-    
+        
         layoutIfNeeded()
-
+        
         pageControl.numberOfPages = delegate.numberOfItemsInCarouselView(self)
+        
+        let numberOfItems = delegate.numberOfItemsInCarouselView(self)
         
         //Condition if the mode is linear or circular
         if(mode == .linear){
-            guard self.items.count < delegate.numberOfItemsInCarouselView(self) else { return }
+            guard self.items.count < numberOfItems else { return }
         }
-    
+        
         for index in 0..<delegate.numberOfItemsInCarouselView(self) {
             addItem(delegate.carouselView(self, itemForRowAtIndex: index))
         }
+        self.setupGestures()
     }
     
     func addItem(_ item: TGLParallaxCarouselItem) {
@@ -182,9 +189,9 @@ open class TGLParallaxCarousel: UIView {
         
         item.center = mainView.center
         
-            self.mainView.layer.insertSublayer(item.layer, at: UInt32(self.items.count))
-            self.items.append(item)
-            self.resetItemsPosition(true)
+        self.mainView.layer.insertSublayer(item.layer, at: UInt32(self.items.count))
+        self.items.append(item)
+        self.resetItemsPosition(true)
     }
     
     
@@ -250,7 +257,7 @@ open class TGLParallaxCarousel: UIView {
             
             let xOffset = (startGesturePoint.x - endGesturePoint.x ) * (1 / parallaxFactor)
             moveCarousel(xOffset)
-                
+            
             startGesturePoint = endGesturePoint
             
         case .ended, .cancelled, .failed:
@@ -265,27 +272,29 @@ open class TGLParallaxCarousel: UIView {
         
         let targetPoint: CGPoint = recognizer.location(in: recognizer.view)
         currentTargetLayer = mainView.layer.hitTest(targetPoint)!
+        if let delegate = self.delegate{
+            delegate.carouselView(self, didSelectItemAtIndex: selectedIndex)
+        }
+        //        guard let targetItem = findItemOnScreen() else { return }
+        //
+        //        let firstItemOffset = (items.first?.xDisp ?? 0) - targetItem.xDisp
+        //        let tappedIndex = -Int(round(firstItemOffset / xDisplacement))
+        //
+        //        self.delegate?.carouselView(self, didSelectItemAtIndex: tappedIndex)
         
-        guard let targetItem = findItemOnScreen() else { return }
-            
-        let firstItemOffset = (items.first?.xDisp ?? 0) - targetItem.xDisp
-        let tappedIndex = -Int(round(firstItemOffset / xDisplacement))
-        
-        self.delegate?.carouselView(self, didSelectItemAtIndex: tappedIndex)
-        
-//        if targetItem.xDisp == 0 {
-//            self.delegate?.carouselView(self, didSelectItemAtIndex: tappedIndex)
-//        }
-//        else {
-//            selectedIndex = tappedIndex
-//        }
+        //        if targetItem.xDisp == 0 {
+        //            self.delegate?.carouselView(self, didSelectItemAtIndex: tappedIndex)
+        //        }
+        //        else {
+        //            selectedIndex = tappedIndex
+        //        }
     }
     
     
     // MARK: - find item
     fileprivate func findItemOnScreen() -> TGLParallaxCarouselItem? {
         currentFoundItem = nil
-
+        
         for item in items {
             currentItem = item
             checkInSubviews(item)
@@ -304,6 +313,12 @@ open class TGLParallaxCarousel: UIView {
     }
     
     fileprivate func checkView(_ view: UIView) -> Bool {
+        //        if(view.layer.position == currentTargetLayer?.position){
+        //            currentFoundItem = currentItem
+        //            return true
+        //        }
+        //        return false
+        
         if view.layer.isEqual(currentTargetLayer) {
             currentFoundItem = currentItem
             return true
@@ -359,7 +374,7 @@ open class TGLParallaxCarousel: UIView {
         let offsetToAdd = xDisplacement * -CGFloat(selectedIndex) - offsetItems
         moveCarousel(-offsetToAdd)
         updatePageControl(selectedIndex)
-//        delegate?.carouselView(self, didSelectItemAtIndex: selectedIndex)
+        //        delegate?.carouselView(self, didSelectItemAtIndex: selectedIndex)
     }
     
     fileprivate func factorForXDisp(_ x: CGFloat) -> CGFloat {
