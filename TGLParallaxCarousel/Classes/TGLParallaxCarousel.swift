@@ -48,23 +48,23 @@ open class TGLParallaxCarousel: UIView {
     }
     open var type: CarouselType = .threeDimensional {
         didSet {
-            reloadData()
+//            reloadData()
         }
     }
     open var margin: CGFloat = 0  {
         didSet {
-            reloadData()
+//            reloadData()
         }
     }
     open var bounceMargin: CGFloat = 10 {
         didSet {
-            reloadData()
+//            reloadData()
         }
     }
     //Add Mode for circular / linear mode un stack views
     open var mode: CarouselMode = .linear{
         didSet{
-            reloadData()
+//            reloadData()
         }
     }
     
