@@ -132,7 +132,7 @@ open class TGLParallaxCarousel: UIView {
     func xibSetup() {
         containerView = loadViewFromNib()
         containerView.frame = bounds
-        containerView.autoresizingMask = [UIViewAutoresizing.flexibleWidth, UIViewAutoresizing.flexibleHeight]
+        containerView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         addSubview(containerView)
     }
     
@@ -205,7 +205,7 @@ open class TGLParallaxCarousel: UIView {
             
             
             let xDispNew = xDisplacement * CGFloat(index)
-            let zDispNew = round(-fabs(xDispNew) * zDisplacementFactor)
+            let zDispNew = round(-abs(xDispNew) * zDisplacementFactor)
             
             let translationX = CABasicAnimation(keyPath: "transform.translation.x")
             translationX.fromValue = item.xDisp
@@ -220,8 +220,8 @@ open class TGLParallaxCarousel: UIView {
             animationGroup.repeatCount = 1
             animationGroup.animations = [translationX, translationZ]
             animationGroup.isRemovedOnCompletion = false
-            animationGroup.fillMode = kCAFillModeRemoved
-            animationGroup.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+            animationGroup.fillMode = .removed
+            animationGroup.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
             item.layer.add(animationGroup, forKey: "myAnimation")
             
             var t = CATransform3DIdentity
@@ -264,6 +264,9 @@ open class TGLParallaxCarousel: UIView {
             startDecelerating()
             
         case.possible:
+            break
+            
+        @unknown default:
             break
         }
     }
@@ -353,7 +356,7 @@ open class TGLParallaxCarousel: UIView {
             
             
             item.xDisp = item.xDisp - offset
-            item.zDisp =  -fabs(item.xDisp) * zDisplacementFactor
+            item.zDisp =  -abs(item.xDisp) * zDisplacementFactor
             
             let factor = factorForXDisp(item.zDisp)
             
@@ -383,9 +386,9 @@ open class TGLParallaxCarousel: UIView {
         let pB = CGPoint(x : xDisplacement,y: 1)
         
         let m = (pB.y - pA.y) / (pB.x - pA.x)
-        let y = (pA.y - m * pA.x) + m * fabs(x)
+        let y = (pA.y - m * pA.x) + m * abs(x)
         
-        switch fabs(x) {
+        switch abs(x) {
         case (xDisplacement / 2)..<xDisplacement:
             return y
         case 0..<(xDisplacement / 2):
