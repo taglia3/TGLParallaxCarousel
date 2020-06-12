@@ -48,7 +48,7 @@ class CustomView: TGLParallaxCarouselItem {
     func xibSetup() {
         containerView = loadViewFromNib()
         containerView.frame = bounds
-        containerView.autoresizingMask = [UIViewAutoresizing.flexibleWidth, UIViewAutoresizing.flexibleHeight]
+        containerView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         addSubview(containerView)
     }
     
