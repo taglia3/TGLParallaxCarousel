@@ -3,286 +3,309 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 53;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0A3EC0A5CD449FF7E12308CCF3D6566B /* TGLParallaxCarousel-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E668D6146305947858685C64EC09FF3 /* TGLParallaxCarousel-dummy.m */; };
-		13E2810BBC966BEE42B20D04E3B97CAC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2A6FF208CEC4C2861F1E9D42D651453 /* Foundation.framework */; };
-		411994FA4AD0A37A8ADEF250B560FB63 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2A6FF208CEC4C2861F1E9D42D651453 /* Foundation.framework */; };
-		50FB4ADA740E2F5AE900F0F0BB9854E9 /* TGLParallaxCarousel.xib in Sources */ = {isa = PBXBuildFile; fileRef = 10E744D8E866159BE416D6FD677C2796 /* TGLParallaxCarousel.xib */; };
-		6A31078A187577252F7F3382F8D07CB0 /* Pods-TGLParallaxCarousel_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD67E0665B5F8DC3A7ABE7EB5D6EC4C /* Pods-TGLParallaxCarousel_Tests-dummy.m */; };
-		6B82B25DD8E84FBE7EFF8B1ECEB72C0A /* Pods-TGLParallaxCarousel_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DAB30278E92760C966104303053B25FA /* Pods-TGLParallaxCarousel_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		70B27A80D52086ED153B8EC4CD488151 /* Pods-TGLParallaxCarousel_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D21366D5AD8F4EB9BDCFF57AA05544 /* Pods-TGLParallaxCarousel_Example-dummy.m */; };
-		9AB6B26B4960108856BC10FB2955CBA5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2A6FF208CEC4C2861F1E9D42D651453 /* Foundation.framework */; };
-		A5058ABBEFECBACE095B84BA8305CE45 /* Pods-TGLParallaxCarousel_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E9B36354B06567F5E5948D4D6A5E5770 /* Pods-TGLParallaxCarousel_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CEC208BD99DABC1FF392BF2DD2678770 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E86668F20F252C440D1015B816BE59C5 /* UIKit.framework */; };
-		CFACA5A9A2BA18B32185C5CBFC0FE755 /* TGLParallaxCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB50F9796F2C6418FA165643B187B1AF /* TGLParallaxCarousel.swift */; };
-		FE6D7E50C06603CC5FD12A386C1F862C /* TGLParallaxCarousel-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 12BF1D665FEEB9DF390470E7F910D1BE /* TGLParallaxCarousel-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		217DDA5EE41ADDDD3FBED88E7C6F2A63 /* TGLParallaxCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AA29F32A46DEFEE770E6F8E0661C3A /* TGLParallaxCarousel.swift */; };
+		3C829E9F95E71319155BE7E182F77D1B /* Pods-TGLParallaxCarousel_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 476353B782CDAB9A59F7FEA1F5020E2B /* Pods-TGLParallaxCarousel_Tests-dummy.m */; };
+		556F5F5439D4A66953A84243EFFB6B30 /* TGLParallaxCarousel-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1625E4BCB0EE29EDB0C9CB84A06EE843 /* TGLParallaxCarousel-dummy.m */; };
+		59E1D1795284B1A61CA412BF7E7400AC /* TGLParallaxCarousel.xib in Sources */ = {isa = PBXBuildFile; fileRef = F701BF12B52792A617A08ECCE5ABBCC7 /* TGLParallaxCarousel.xib */; };
+		621F95CD200ADA66ED250849ADDA0460 /* Pods-TGLParallaxCarousel_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B55262AAF3A945B6CEBA20226893D97 /* Pods-TGLParallaxCarousel_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		79D11BDB67C6A1EFD92EE6CB60180543 /* Pods-TGLParallaxCarousel_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D4C0F9D4A4A66262FABC8B8237F025B4 /* Pods-TGLParallaxCarousel_Example-dummy.m */; };
+		7B9177DA2CE636C2EBD40BC9117DDA7E /* Pods-TGLParallaxCarousel_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C12D60CBF040F75081FC21B7964B68A /* Pods-TGLParallaxCarousel_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		863F38FB2A8EF0AC5D34477665C05CB4 /* TGLParallaxCarousel-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EB438A3FC7D477F64CB90EDA3F42E0BC /* TGLParallaxCarousel-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		87843ED1C9F867D2539826CDFE87EDEC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
+		AC633D27263FE3136C313402057F5A22 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
+		DBFDCDB628169A25466DA0A51B321F45 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D245E0514AAC1A2B9A6D5EA2F383E90F /* UIKit.framework */; };
+		E0E40B951DF25069A5C645FEFC50826E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		828023F36C6EA06A5E49AF71555BE4BB /* PBXContainerItemProxy */ = {
+		2BB080FD4B2F621B3BDBC67942312F3E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = E29686B081BF1A19ED60EB05931448BA;
+			remoteGlobalIDString = 65B66E3B868FCA65B735D1737EF33299;
 			remoteInfo = TGLParallaxCarousel;
+		};
+		A4CCE698AA4D26993B6B8520E9232AC3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0140B25C0E1469B99B1A8446697FABD8;
+			remoteInfo = "Pods-TGLParallaxCarousel_Example";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		10E744D8E866159BE416D6FD677C2796 /* TGLParallaxCarousel.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = TGLParallaxCarousel.xib; sourceTree = "<group>"; };
-		12BF1D665FEEB9DF390470E7F910D1BE /* TGLParallaxCarousel-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TGLParallaxCarousel-umbrella.h"; sourceTree = "<group>"; };
-		13A6A1374704992AF5919063280DD3E4 /* Pods-TGLParallaxCarousel_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TGLParallaxCarousel_Example-frameworks.sh"; sourceTree = "<group>"; };
-		234EF5BD1A2300B54D550CC0C693E9CD /* TGLParallaxCarousel.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TGLParallaxCarousel.xcconfig; sourceTree = "<group>"; };
-		25DBC88A63C420A92D10D186325AAD96 /* Pods-TGLParallaxCarousel_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TGLParallaxCarousel_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		361C42D5A44B70D9228E672F79EA0009 /* Pods-TGLParallaxCarousel_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TGLParallaxCarousel_Example.release.xcconfig"; sourceTree = "<group>"; };
-		39606A09AD5ED185BBB0106437C9E67D /* Pods-TGLParallaxCarousel_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TGLParallaxCarousel_Example-resources.sh"; sourceTree = "<group>"; };
-		404E69E47F768A29BA46D942DB9BA922 /* Pods-TGLParallaxCarousel_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TGLParallaxCarousel_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		41E67F45BED4DCE8BCCD3097A31AAEA2 /* Pods-TGLParallaxCarousel_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TGLParallaxCarousel_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		4E668D6146305947858685C64EC09FF3 /* TGLParallaxCarousel-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TGLParallaxCarousel-dummy.m"; sourceTree = "<group>"; };
-		5390F3E0D426EA3AD335012124AE0D6F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		641182CDEE4DAD8222B414C375501F3D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6C5A959F81B30FE302732F4D49F98C29 /* TGLParallaxCarousel.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = TGLParallaxCarousel.modulemap; sourceTree = "<group>"; };
-		6E04879EB9DBA03D4D1C8728DABCFCD3 /* Pods_TGLParallaxCarousel_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TGLParallaxCarousel_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7B438BA4340A799229DDAE26A7C15FCB /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		81A3E76C5745FC00D7B0D9DD112521CE /* TGLParallaxCarousel-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TGLParallaxCarousel-prefix.pch"; sourceTree = "<group>"; };
-		8BA126E09EAD246C79B3A2CE96400884 /* Pods-TGLParallaxCarousel_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TGLParallaxCarousel_Tests-resources.sh"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A106C6950E98E696D833BCD6D8F2EFBC /* Pods_TGLParallaxCarousel_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TGLParallaxCarousel_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A2A6FF208CEC4C2861F1E9D42D651453 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		A55DEF5D991A1C2843C3AD9C217FCBB3 /* Pods-TGLParallaxCarousel_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TGLParallaxCarousel_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		ADAA8C274629128B08F492F28F130C0D /* Pods-TGLParallaxCarousel_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-TGLParallaxCarousel_Example.modulemap"; sourceTree = "<group>"; };
-		AF69E4E04134F2BBEE5698F68CC2B0A3 /* TGLParallaxCarousel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TGLParallaxCarousel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C39701571749FAD5BF065E1743343246 /* Pods-TGLParallaxCarousel_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-TGLParallaxCarousel_Tests.modulemap"; sourceTree = "<group>"; };
-		CAD67E0665B5F8DC3A7ABE7EB5D6EC4C /* Pods-TGLParallaxCarousel_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TGLParallaxCarousel_Tests-dummy.m"; sourceTree = "<group>"; };
-		CE87A472D4A347274B2ACECF6EF86922 /* Pods-TGLParallaxCarousel_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TGLParallaxCarousel_Tests-frameworks.sh"; sourceTree = "<group>"; };
-		D0D21366D5AD8F4EB9BDCFF57AA05544 /* Pods-TGLParallaxCarousel_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TGLParallaxCarousel_Example-dummy.m"; sourceTree = "<group>"; };
-		DAB30278E92760C966104303053B25FA /* Pods-TGLParallaxCarousel_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TGLParallaxCarousel_Tests-umbrella.h"; sourceTree = "<group>"; };
-		DB6858384934FADA6B1C376801C4F3B1 /* Pods-TGLParallaxCarousel_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TGLParallaxCarousel_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		E7B887F65A9B6BB84FC8A1F76A2B708F /* Pods-TGLParallaxCarousel_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TGLParallaxCarousel_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		E86668F20F252C440D1015B816BE59C5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		E9B36354B06567F5E5948D4D6A5E5770 /* Pods-TGLParallaxCarousel_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TGLParallaxCarousel_Example-umbrella.h"; sourceTree = "<group>"; };
-		F3A8C11C54FF73735B4B01FD8D516CC7 /* Pods-TGLParallaxCarousel_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TGLParallaxCarousel_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		FB50F9796F2C6418FA165643B187B1AF /* TGLParallaxCarousel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TGLParallaxCarousel.swift; sourceTree = "<group>"; };
+		138477584BE5B1D319252F97027E5F5D /* Pods-TGLParallaxCarousel_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TGLParallaxCarousel_Example-Info.plist"; sourceTree = "<group>"; };
+		1625E4BCB0EE29EDB0C9CB84A06EE843 /* TGLParallaxCarousel-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TGLParallaxCarousel-dummy.m"; sourceTree = "<group>"; };
+		26CD4AC5E32D1A29F9531902C22F0D04 /* Pods-TGLParallaxCarousel_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TGLParallaxCarousel_Tests.modulemap"; sourceTree = "<group>"; };
+		2DA137CA5B414442CC6255B594A27296 /* Pods-TGLParallaxCarousel_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TGLParallaxCarousel_Tests-Info.plist"; sourceTree = "<group>"; };
+		3E202552A9BD65E70EB305D0CA9FEB66 /* Pods_TGLParallaxCarousel_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TGLParallaxCarousel_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3EBA45D14786462B295412C86E8C512B /* TGLParallaxCarousel.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = TGLParallaxCarousel.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		476353B782CDAB9A59F7FEA1F5020E2B /* Pods-TGLParallaxCarousel_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TGLParallaxCarousel_Tests-dummy.m"; sourceTree = "<group>"; };
+		47AA29F32A46DEFEE770E6F8E0661C3A /* TGLParallaxCarousel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TGLParallaxCarousel.swift; path = TGLParallaxCarousel/Classes/TGLParallaxCarousel.swift; sourceTree = "<group>"; };
+		55CD7F8BB78B4D10B9AB070451FF83B7 /* Pods-TGLParallaxCarousel_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TGLParallaxCarousel_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		5BCCD64CB954DF3F8FB27F8A7B98665D /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		5C12D60CBF040F75081FC21B7964B68A /* Pods-TGLParallaxCarousel_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TGLParallaxCarousel_Example-umbrella.h"; sourceTree = "<group>"; };
+		7575541EFFED78248123BD904AD02437 /* TGLParallaxCarousel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TGLParallaxCarousel.release.xcconfig; sourceTree = "<group>"; };
+		798A4341F42EF7BD049B708851E63912 /* Pods-TGLParallaxCarousel_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TGLParallaxCarousel_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		7B55262AAF3A945B6CEBA20226893D97 /* Pods-TGLParallaxCarousel_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TGLParallaxCarousel_Tests-umbrella.h"; sourceTree = "<group>"; };
+		8195CDB92761188D59989C542B74978F /* TGLParallaxCarousel-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "TGLParallaxCarousel-Info.plist"; sourceTree = "<group>"; };
+		871F5368553AD9508956905A554F7BFC /* Pods_TGLParallaxCarousel_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TGLParallaxCarousel_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D54CF5A1994CA8F9A7720874175A6C5 /* TGLParallaxCarousel.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = TGLParallaxCarousel.modulemap; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9E45024CCB6FB2F23BD45500F572A020 /* Pods-TGLParallaxCarousel_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TGLParallaxCarousel_Example.modulemap"; sourceTree = "<group>"; };
+		AABF45FD2DEC8635DC9A625BF79D6119 /* Pods-TGLParallaxCarousel_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TGLParallaxCarousel_Example-frameworks.sh"; sourceTree = "<group>"; };
+		B04133C4EFAA83282597D0C5C8AFA569 /* TGLParallaxCarousel-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TGLParallaxCarousel-prefix.pch"; sourceTree = "<group>"; };
+		B23D0F6D9CE22BD71AB871B77D7B3E82 /* Pods-TGLParallaxCarousel_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TGLParallaxCarousel_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		BBEA1D20FF4F3BD4F04F7C7C3A5ABD89 /* Pods-TGLParallaxCarousel_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TGLParallaxCarousel_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		C61CFE89B737746095947BF009D4287D /* Pods-TGLParallaxCarousel_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TGLParallaxCarousel_Example.release.xcconfig"; sourceTree = "<group>"; };
+		CC4A353AE6148427D67A6C37EAB85F81 /* Pods-TGLParallaxCarousel_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TGLParallaxCarousel_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		D245E0514AAC1A2B9A6D5EA2F383E90F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		D4C0F9D4A4A66262FABC8B8237F025B4 /* Pods-TGLParallaxCarousel_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TGLParallaxCarousel_Example-dummy.m"; sourceTree = "<group>"; };
+		D4F5737F428FAC217A574CFFCBBE1C13 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		DCE55BF208C48DE2262E7BC62F00EC47 /* Pods-TGLParallaxCarousel_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TGLParallaxCarousel_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		E15F08A5DEB50D1FFC2F9F6CC9105243 /* TGLParallaxCarousel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TGLParallaxCarousel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E36677693229DCF24AC25E6F67E29536 /* TGLParallaxCarousel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TGLParallaxCarousel.debug.xcconfig; sourceTree = "<group>"; };
+		E74AA74FCA2025FD49347FB8E8D35375 /* Pods-TGLParallaxCarousel_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TGLParallaxCarousel_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		EB438A3FC7D477F64CB90EDA3F42E0BC /* TGLParallaxCarousel-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TGLParallaxCarousel-umbrella.h"; sourceTree = "<group>"; };
+		F701BF12B52792A617A08ECCE5ABBCC7 /* TGLParallaxCarousel.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = TGLParallaxCarousel.xib; path = TGLParallaxCarousel/Classes/TGLParallaxCarousel.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		4BD9C49ABF5F0D94CEF5F720C6D85CDD /* Frameworks */ = {
+		8787FDFF6DF7E09EF75B2999845FB4D6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9AB6B26B4960108856BC10FB2955CBA5 /* Foundation.framework in Frameworks */,
+				E0E40B951DF25069A5C645FEFC50826E /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		609B059CD45D4B5242EAAA1DCD8BE1EE /* Frameworks */ = {
+		AE81B7471EC5F17DC48582D788129BBF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				13E2810BBC966BEE42B20D04E3B97CAC /* Foundation.framework in Frameworks */,
-				CEC208BD99DABC1FF392BF2DD2678770 /* UIKit.framework in Frameworks */,
+				87843ED1C9F867D2539826CDFE87EDEC /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D12D97572458957B02853076B6E737C4 /* Frameworks */ = {
+		CB15BB522393AEFFA388795F5966C68C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				411994FA4AD0A37A8ADEF250B560FB63 /* Foundation.framework in Frameworks */,
+				AC633D27263FE3136C313402057F5A22 /* Foundation.framework in Frameworks */,
+				DBFDCDB628169A25466DA0A51B321F45 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1831230F755D4753DF4754132A67E76A /* Pods-TGLParallaxCarousel_Tests */ = {
+		130C82BAA38FD6FEEB94B222DCE50F54 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				641182CDEE4DAD8222B414C375501F3D /* Info.plist */,
-				C39701571749FAD5BF065E1743343246 /* Pods-TGLParallaxCarousel_Tests.modulemap */,
-				25DBC88A63C420A92D10D186325AAD96 /* Pods-TGLParallaxCarousel_Tests-acknowledgements.markdown */,
-				DB6858384934FADA6B1C376801C4F3B1 /* Pods-TGLParallaxCarousel_Tests-acknowledgements.plist */,
-				CAD67E0665B5F8DC3A7ABE7EB5D6EC4C /* Pods-TGLParallaxCarousel_Tests-dummy.m */,
-				CE87A472D4A347274B2ACECF6EF86922 /* Pods-TGLParallaxCarousel_Tests-frameworks.sh */,
-				8BA126E09EAD246C79B3A2CE96400884 /* Pods-TGLParallaxCarousel_Tests-resources.sh */,
-				DAB30278E92760C966104303053B25FA /* Pods-TGLParallaxCarousel_Tests-umbrella.h */,
-				F3A8C11C54FF73735B4B01FD8D516CC7 /* Pods-TGLParallaxCarousel_Tests.debug.xcconfig */,
-				E7B887F65A9B6BB84FC8A1F76A2B708F /* Pods-TGLParallaxCarousel_Tests.release.xcconfig */,
+				3E202552A9BD65E70EB305D0CA9FEB66 /* Pods_TGLParallaxCarousel_Example.framework */,
+				871F5368553AD9508956905A554F7BFC /* Pods_TGLParallaxCarousel_Tests.framework */,
+				E15F08A5DEB50D1FFC2F9F6CC9105243 /* TGLParallaxCarousel.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				59DA5C1F72E1D5BABC43EACBA672C3BA /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3140139B03C7B73E8D81304EAD3D50C3 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BFC96F5FA57C833DFD5D2A225657B698 /* TGLParallaxCarousel */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		59DA5C1F72E1D5BABC43EACBA672C3BA /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */,
+				D245E0514AAC1A2B9A6D5EA2F383E90F /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		60D6C3CF73C700D6D1D145CB6C600AD1 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				E2388AA42752F7F154DB40D31593D747 /* Pods-TGLParallaxCarousel_Example */,
+				826CFE5ED14AD2B33CA8B582AD56F1AB /* Pods-TGLParallaxCarousel_Tests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		826CFE5ED14AD2B33CA8B582AD56F1AB /* Pods-TGLParallaxCarousel_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				26CD4AC5E32D1A29F9531902C22F0D04 /* Pods-TGLParallaxCarousel_Tests.modulemap */,
+				798A4341F42EF7BD049B708851E63912 /* Pods-TGLParallaxCarousel_Tests-acknowledgements.markdown */,
+				B23D0F6D9CE22BD71AB871B77D7B3E82 /* Pods-TGLParallaxCarousel_Tests-acknowledgements.plist */,
+				476353B782CDAB9A59F7FEA1F5020E2B /* Pods-TGLParallaxCarousel_Tests-dummy.m */,
+				2DA137CA5B414442CC6255B594A27296 /* Pods-TGLParallaxCarousel_Tests-Info.plist */,
+				7B55262AAF3A945B6CEBA20226893D97 /* Pods-TGLParallaxCarousel_Tests-umbrella.h */,
+				55CD7F8BB78B4D10B9AB070451FF83B7 /* Pods-TGLParallaxCarousel_Tests.debug.xcconfig */,
+				CC4A353AE6148427D67A6C37EAB85F81 /* Pods-TGLParallaxCarousel_Tests.release.xcconfig */,
 			);
 			name = "Pods-TGLParallaxCarousel_Tests";
 			path = "Target Support Files/Pods-TGLParallaxCarousel_Tests";
 			sourceTree = "<group>";
 		};
-		1F8D8D838EE6C730548CDB21F51CB6C8 /* TGLParallaxCarousel */ = {
+		BFC96F5FA57C833DFD5D2A225657B698 /* TGLParallaxCarousel */ = {
 			isa = PBXGroup;
 			children = (
-				7EDACADFAB8D84FA6840954B8F7AB26D /* Classes */,
-			);
-			path = TGLParallaxCarousel;
-			sourceTree = "<group>";
-		};
-		2BF6436132D10C33095D9F5B1F37CFE5 /* TGLParallaxCarousel */ = {
-			isa = PBXGroup;
-			children = (
-				DBB8130747E6BAC2F1375B3DD14F5361 /* Support Files */,
-				1F8D8D838EE6C730548CDB21F51CB6C8 /* TGLParallaxCarousel */,
+				47AA29F32A46DEFEE770E6F8E0661C3A /* TGLParallaxCarousel.swift */,
+				F701BF12B52792A617A08ECCE5ABBCC7 /* TGLParallaxCarousel.xib */,
+				CC8F0BE17EBF431BFDFE0661CFC06305 /* Pod */,
+				F2C1D51CA3EDF862C23E163E784C3841 /* Support Files */,
 			);
 			name = TGLParallaxCarousel;
 			path = ../..;
 			sourceTree = "<group>";
 		};
-		300799D679CA4F7010E7A9049C81B7DF /* Pods-TGLParallaxCarousel_Example */ = {
+		CC8F0BE17EBF431BFDFE0661CFC06305 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				7B438BA4340A799229DDAE26A7C15FCB /* Info.plist */,
-				ADAA8C274629128B08F492F28F130C0D /* Pods-TGLParallaxCarousel_Example.modulemap */,
-				41E67F45BED4DCE8BCCD3097A31AAEA2 /* Pods-TGLParallaxCarousel_Example-acknowledgements.markdown */,
-				A55DEF5D991A1C2843C3AD9C217FCBB3 /* Pods-TGLParallaxCarousel_Example-acknowledgements.plist */,
-				D0D21366D5AD8F4EB9BDCFF57AA05544 /* Pods-TGLParallaxCarousel_Example-dummy.m */,
-				13A6A1374704992AF5919063280DD3E4 /* Pods-TGLParallaxCarousel_Example-frameworks.sh */,
-				39606A09AD5ED185BBB0106437C9E67D /* Pods-TGLParallaxCarousel_Example-resources.sh */,
-				E9B36354B06567F5E5948D4D6A5E5770 /* Pods-TGLParallaxCarousel_Example-umbrella.h */,
-				404E69E47F768A29BA46D942DB9BA922 /* Pods-TGLParallaxCarousel_Example.debug.xcconfig */,
-				361C42D5A44B70D9228E672F79EA0009 /* Pods-TGLParallaxCarousel_Example.release.xcconfig */,
+				5BCCD64CB954DF3F8FB27F8A7B98665D /* LICENSE */,
+				D4F5737F428FAC217A574CFFCBBE1C13 /* README.md */,
+				3EBA45D14786462B295412C86E8C512B /* TGLParallaxCarousel.podspec */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				3140139B03C7B73E8D81304EAD3D50C3 /* Development Pods */,
+				1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */,
+				130C82BAA38FD6FEEB94B222DCE50F54 /* Products */,
+				60D6C3CF73C700D6D1D145CB6C600AD1 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		E2388AA42752F7F154DB40D31593D747 /* Pods-TGLParallaxCarousel_Example */ = {
+			isa = PBXGroup;
+			children = (
+				9E45024CCB6FB2F23BD45500F572A020 /* Pods-TGLParallaxCarousel_Example.modulemap */,
+				E74AA74FCA2025FD49347FB8E8D35375 /* Pods-TGLParallaxCarousel_Example-acknowledgements.markdown */,
+				DCE55BF208C48DE2262E7BC62F00EC47 /* Pods-TGLParallaxCarousel_Example-acknowledgements.plist */,
+				D4C0F9D4A4A66262FABC8B8237F025B4 /* Pods-TGLParallaxCarousel_Example-dummy.m */,
+				AABF45FD2DEC8635DC9A625BF79D6119 /* Pods-TGLParallaxCarousel_Example-frameworks.sh */,
+				138477584BE5B1D319252F97027E5F5D /* Pods-TGLParallaxCarousel_Example-Info.plist */,
+				5C12D60CBF040F75081FC21B7964B68A /* Pods-TGLParallaxCarousel_Example-umbrella.h */,
+				BBEA1D20FF4F3BD4F04F7C7C3A5ABD89 /* Pods-TGLParallaxCarousel_Example.debug.xcconfig */,
+				C61CFE89B737746095947BF009D4287D /* Pods-TGLParallaxCarousel_Example.release.xcconfig */,
 			);
 			name = "Pods-TGLParallaxCarousel_Example";
 			path = "Target Support Files/Pods-TGLParallaxCarousel_Example";
 			sourceTree = "<group>";
 		};
-		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
+		F2C1D51CA3EDF862C23E163E784C3841 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				F302CD3B306AF1ED96B9AF31FCDBC26C /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		7DB346D0F39D3F0E887471402A8071AB = {
-			isa = PBXGroup;
-			children = (
-				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				ADBF37F493FBF683807BC6F32B65B547 /* Development Pods */,
-				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
-				C86981864DFA8EFC992CB883026EAB1D /* Products */,
-				E00B1A37414A9FCFC0D53A9B306952DE /* Targets Support Files */,
-			);
-			sourceTree = "<group>";
-		};
-		7EDACADFAB8D84FA6840954B8F7AB26D /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				FB50F9796F2C6418FA165643B187B1AF /* TGLParallaxCarousel.swift */,
-				10E744D8E866159BE416D6FD677C2796 /* TGLParallaxCarousel.xib */,
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
-		ADBF37F493FBF683807BC6F32B65B547 /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				2BF6436132D10C33095D9F5B1F37CFE5 /* TGLParallaxCarousel */,
-			);
-			name = "Development Pods";
-			sourceTree = "<group>";
-		};
-		C86981864DFA8EFC992CB883026EAB1D /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				A106C6950E98E696D833BCD6D8F2EFBC /* Pods_TGLParallaxCarousel_Example.framework */,
-				6E04879EB9DBA03D4D1C8728DABCFCD3 /* Pods_TGLParallaxCarousel_Tests.framework */,
-				AF69E4E04134F2BBEE5698F68CC2B0A3 /* TGLParallaxCarousel.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		DBB8130747E6BAC2F1375B3DD14F5361 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				5390F3E0D426EA3AD335012124AE0D6F /* Info.plist */,
-				6C5A959F81B30FE302732F4D49F98C29 /* TGLParallaxCarousel.modulemap */,
-				234EF5BD1A2300B54D550CC0C693E9CD /* TGLParallaxCarousel.xcconfig */,
-				4E668D6146305947858685C64EC09FF3 /* TGLParallaxCarousel-dummy.m */,
-				81A3E76C5745FC00D7B0D9DD112521CE /* TGLParallaxCarousel-prefix.pch */,
-				12BF1D665FEEB9DF390470E7F910D1BE /* TGLParallaxCarousel-umbrella.h */,
+				8D54CF5A1994CA8F9A7720874175A6C5 /* TGLParallaxCarousel.modulemap */,
+				1625E4BCB0EE29EDB0C9CB84A06EE843 /* TGLParallaxCarousel-dummy.m */,
+				8195CDB92761188D59989C542B74978F /* TGLParallaxCarousel-Info.plist */,
+				B04133C4EFAA83282597D0C5C8AFA569 /* TGLParallaxCarousel-prefix.pch */,
+				EB438A3FC7D477F64CB90EDA3F42E0BC /* TGLParallaxCarousel-umbrella.h */,
+				E36677693229DCF24AC25E6F67E29536 /* TGLParallaxCarousel.debug.xcconfig */,
+				7575541EFFED78248123BD904AD02437 /* TGLParallaxCarousel.release.xcconfig */,
 			);
 			name = "Support Files";
 			path = "Example/Pods/Target Support Files/TGLParallaxCarousel";
 			sourceTree = "<group>";
 		};
-		E00B1A37414A9FCFC0D53A9B306952DE /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				300799D679CA4F7010E7A9049C81B7DF /* Pods-TGLParallaxCarousel_Example */,
-				1831230F755D4753DF4754132A67E76A /* Pods-TGLParallaxCarousel_Tests */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		F302CD3B306AF1ED96B9AF31FCDBC26C /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				A2A6FF208CEC4C2861F1E9D42D651453 /* Foundation.framework */,
-				E86668F20F252C440D1015B816BE59C5 /* UIKit.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		2E043908156B5D7C6D2EAE0F621D329C /* Headers */ = {
+		0553F6749A2DBD490502496AC5B15DD9 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6B82B25DD8E84FBE7EFF8B1ECEB72C0A /* Pods-TGLParallaxCarousel_Tests-umbrella.h in Headers */,
+				863F38FB2A8EF0AC5D34477665C05CB4 /* TGLParallaxCarousel-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9A68A4BD1E3497BD85C522F43F94668D /* Headers */ = {
+		13EF9F8CAA40C149A1957616955EBFF7 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE6D7E50C06603CC5FD12A386C1F862C /* TGLParallaxCarousel-umbrella.h in Headers */,
+				7B9177DA2CE636C2EBD40BC9117DDA7E /* Pods-TGLParallaxCarousel_Example-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D548FDFF8946935E8FF1EC9B7266B0D0 /* Headers */ = {
+		37C62ACFE6DCE6CBAFE88CA34A191CCC /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5058ABBEFECBACE095B84BA8305CE45 /* Pods-TGLParallaxCarousel_Example-umbrella.h in Headers */,
+				621F95CD200ADA66ED250849ADDA0460 /* Pods-TGLParallaxCarousel_Tests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		9FE6A4109794A96D2C49B9E5D7547ADE /* Pods-TGLParallaxCarousel_Tests */ = {
+		0140B25C0E1469B99B1A8446697FABD8 /* Pods-TGLParallaxCarousel_Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BA2E570760C9B61EFE25164A1F7503B8 /* Build configuration list for PBXNativeTarget "Pods-TGLParallaxCarousel_Tests" */;
+			buildConfigurationList = ADBA9C592A787EE982CAC62CC94FB1DC /* Build configuration list for PBXNativeTarget "Pods-TGLParallaxCarousel_Example" */;
 			buildPhases = (
-				2DB0B49EE4B8D2AB9AD9EE375CA2B6B6 /* Sources */,
-				4BD9C49ABF5F0D94CEF5F720C6D85CDD /* Frameworks */,
-				2E043908156B5D7C6D2EAE0F621D329C /* Headers */,
+				13EF9F8CAA40C149A1957616955EBFF7 /* Headers */,
+				01BB8BDB06DA4C8AA2BD321765711E00 /* Sources */,
+				8787FDFF6DF7E09EF75B2999845FB4D6 /* Frameworks */,
+				D259D2072B4FC6E346CA42C1BA2F69E2 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				E7E9DE8ACC9652FC9808A95E5027EF6F /* PBXTargetDependency */,
 			);
-			name = "Pods-TGLParallaxCarousel_Tests";
-			productName = "Pods-TGLParallaxCarousel_Tests";
-			productReference = 6E04879EB9DBA03D4D1C8728DABCFCD3 /* Pods_TGLParallaxCarousel_Tests.framework */;
+			name = "Pods-TGLParallaxCarousel_Example";
+			productName = Pods_TGLParallaxCarousel_Example;
+			productReference = 3E202552A9BD65E70EB305D0CA9FEB66 /* Pods_TGLParallaxCarousel_Example.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		E29686B081BF1A19ED60EB05931448BA /* TGLParallaxCarousel */ = {
+		2C39710494D9C29CF8A3186BEDC151EF /* Pods-TGLParallaxCarousel_Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D260EC69841A863DE93F85FC78120764 /* Build configuration list for PBXNativeTarget "TGLParallaxCarousel" */;
+			buildConfigurationList = 11F11BB93C4DCE73A0D596AC5A93CC4F /* Build configuration list for PBXNativeTarget "Pods-TGLParallaxCarousel_Tests" */;
 			buildPhases = (
-				1E6B7CB8432BF29DEFA4253EDAC587B1 /* Sources */,
-				609B059CD45D4B5242EAAA1DCD8BE1EE /* Frameworks */,
-				9A68A4BD1E3497BD85C522F43F94668D /* Headers */,
+				37C62ACFE6DCE6CBAFE88CA34A191CCC /* Headers */,
+				CF99632A1F863DC95AB7C12F3DA51B28 /* Sources */,
+				AE81B7471EC5F17DC48582D788129BBF /* Frameworks */,
+				5B6B5E90DBFBE083714C6FC8C7C98D5B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6348EB020A2315ACB398D82CDADCDB80 /* PBXTargetDependency */,
+			);
+			name = "Pods-TGLParallaxCarousel_Tests";
+			productName = Pods_TGLParallaxCarousel_Tests;
+			productReference = 871F5368553AD9508956905A554F7BFC /* Pods_TGLParallaxCarousel_Tests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		65B66E3B868FCA65B735D1737EF33299 /* TGLParallaxCarousel */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F9CBB9FBE09DE02479E79FBA920B0AF7 /* Build configuration list for PBXNativeTarget "TGLParallaxCarousel" */;
+			buildPhases = (
+				0553F6749A2DBD490502496AC5B15DD9 /* Headers */,
+				26630214AE2A8D450E0B14CBC3225174 /* Sources */,
+				CB15BB522393AEFFA388795F5966C68C /* Frameworks */,
+				30106F2479AA78B0D3D98C1AB03899B0 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -290,379 +313,461 @@
 			);
 			name = TGLParallaxCarousel;
 			productName = TGLParallaxCarousel;
-			productReference = AF69E4E04134F2BBEE5698F68CC2B0A3 /* TGLParallaxCarousel.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		F92B518831910EBFE8987464E6D0EBCE /* Pods-TGLParallaxCarousel_Example */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E33D8F42356333DEDA58475E4F304B1E /* Build configuration list for PBXNativeTarget "Pods-TGLParallaxCarousel_Example" */;
-			buildPhases = (
-				1FAD350C19A35278FC0BA05AF26FA189 /* Sources */,
-				D12D97572458957B02853076B6E737C4 /* Frameworks */,
-				D548FDFF8946935E8FF1EC9B7266B0D0 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				248F02E957EA6ED4D908B9D15A96249C /* PBXTargetDependency */,
-			);
-			name = "Pods-TGLParallaxCarousel_Example";
-			productName = "Pods-TGLParallaxCarousel_Example";
-			productReference = A106C6950E98E696D833BCD6D8F2EFBC /* Pods_TGLParallaxCarousel_Example.framework */;
+			productReference = E15F08A5DEB50D1FFC2F9F6CC9105243 /* TGLParallaxCarousel.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0700;
+				BuildIndependentTargetsInParallel = YES;
+				LastSwiftUpdateCheck = 1300;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					65B66E3B868FCA65B735D1737EF33299 = {
+						LastSwiftMigration = "";
+					};
+				};
 			};
-			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				Base,
 				en,
 			);
-			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = C86981864DFA8EFC992CB883026EAB1D /* Products */;
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 130C82BAA38FD6FEEB94B222DCE50F54 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F92B518831910EBFE8987464E6D0EBCE /* Pods-TGLParallaxCarousel_Example */,
-				9FE6A4109794A96D2C49B9E5D7547ADE /* Pods-TGLParallaxCarousel_Tests */,
-				E29686B081BF1A19ED60EB05931448BA /* TGLParallaxCarousel */,
+				0140B25C0E1469B99B1A8446697FABD8 /* Pods-TGLParallaxCarousel_Example */,
+				2C39710494D9C29CF8A3186BEDC151EF /* Pods-TGLParallaxCarousel_Tests */,
+				65B66E3B868FCA65B735D1737EF33299 /* TGLParallaxCarousel */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		30106F2479AA78B0D3D98C1AB03899B0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B6B5E90DBFBE083714C6FC8C7C98D5B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D259D2072B4FC6E346CA42C1BA2F69E2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		1E6B7CB8432BF29DEFA4253EDAC587B1 /* Sources */ = {
+		01BB8BDB06DA4C8AA2BD321765711E00 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A3EC0A5CD449FF7E12308CCF3D6566B /* TGLParallaxCarousel-dummy.m in Sources */,
-				CFACA5A9A2BA18B32185C5CBFC0FE755 /* TGLParallaxCarousel.swift in Sources */,
-				50FB4ADA740E2F5AE900F0F0BB9854E9 /* TGLParallaxCarousel.xib in Sources */,
+				79D11BDB67C6A1EFD92EE6CB60180543 /* Pods-TGLParallaxCarousel_Example-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1FAD350C19A35278FC0BA05AF26FA189 /* Sources */ = {
+		26630214AE2A8D450E0B14CBC3225174 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				70B27A80D52086ED153B8EC4CD488151 /* Pods-TGLParallaxCarousel_Example-dummy.m in Sources */,
+				217DDA5EE41ADDDD3FBED88E7C6F2A63 /* TGLParallaxCarousel.swift in Sources */,
+				59E1D1795284B1A61CA412BF7E7400AC /* TGLParallaxCarousel.xib in Sources */,
+				556F5F5439D4A66953A84243EFFB6B30 /* TGLParallaxCarousel-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2DB0B49EE4B8D2AB9AD9EE375CA2B6B6 /* Sources */ = {
+		CF99632A1F863DC95AB7C12F3DA51B28 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A31078A187577252F7F3382F8D07CB0 /* Pods-TGLParallaxCarousel_Tests-dummy.m in Sources */,
+				3C829E9F95E71319155BE7E182F77D1B /* Pods-TGLParallaxCarousel_Tests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		248F02E957EA6ED4D908B9D15A96249C /* PBXTargetDependency */ = {
+		6348EB020A2315ACB398D82CDADCDB80 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-TGLParallaxCarousel_Example";
+			target = 0140B25C0E1469B99B1A8446697FABD8 /* Pods-TGLParallaxCarousel_Example */;
+			targetProxy = A4CCE698AA4D26993B6B8520E9232AC3 /* PBXContainerItemProxy */;
+		};
+		E7E9DE8ACC9652FC9808A95E5027EF6F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = TGLParallaxCarousel;
-			target = E29686B081BF1A19ED60EB05931448BA /* TGLParallaxCarousel */;
-			targetProxy = 828023F36C6EA06A5E49AF71555BE4BB /* PBXContainerItemProxy */;
+			target = 65B66E3B868FCA65B735D1737EF33299 /* TGLParallaxCarousel */;
+			targetProxy = 2BB080FD4B2F621B3BDBC67942312F3E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		015A368F878AC3E2CEAE21DDE8026304 /* Debug */ = {
+		0A35843C9391597351DFF730AEB7CBCB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C61CFE89B737746095947BF009D4287D /* Pods-TGLParallaxCarousel_Example.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-TGLParallaxCarousel_Example/Pods-TGLParallaxCarousel_Example-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TGLParallaxCarousel_Example/Pods-TGLParallaxCarousel_Example.modulemap";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++14";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		275E6D2C3E082532EC1BD470AC913D6F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E36677693229DCF24AC25E6F67E29536 /* TGLParallaxCarousel.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/TGLParallaxCarousel/TGLParallaxCarousel-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/TGLParallaxCarousel/TGLParallaxCarousel-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/TGLParallaxCarousel/TGLParallaxCarousel.modulemap";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++14";
+				PRODUCT_MODULE_NAME = TGLParallaxCarousel;
+				PRODUCT_NAME = TGLParallaxCarousel;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		76A12024C43B703E96AC26662D645D55 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CC4A353AE6148427D67A6C37EAB85F81 /* Pods-TGLParallaxCarousel_Tests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-TGLParallaxCarousel_Tests/Pods-TGLParallaxCarousel_Tests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TGLParallaxCarousel_Tests/Pods-TGLParallaxCarousel_Tests.modulemap";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++14";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		80F7AF3C68DC35551DB1B4B0C7AD07C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BBEA1D20FF4F3BD4F04F7C7C3A5ABD89 /* Pods-TGLParallaxCarousel_Example.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-TGLParallaxCarousel_Example/Pods-TGLParallaxCarousel_Example-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TGLParallaxCarousel_Example/Pods-TGLParallaxCarousel_Example.modulemap";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++14";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		82EF8181835209819C1AF61E5D93B105 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55CD7F8BB78B4D10B9AB070451FF83B7 /* Pods-TGLParallaxCarousel_Tests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-TGLParallaxCarousel_Tests/Pods-TGLParallaxCarousel_Tests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TGLParallaxCarousel_Tests/Pods-TGLParallaxCarousel_Tests.modulemap";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++14";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8DE5143C03248BB6CD542DE3963D6F3A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"POD_CONFIGURATION_DEBUG=1",
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
-				STRIP_INSTALLED_PRODUCT = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
 		};
-		3EC8CEC85418A7B27C7005AE9581D321 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 234EF5BD1A2300B54D550CC0C693E9CD /* TGLParallaxCarousel.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/TGLParallaxCarousel/TGLParallaxCarousel-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/TGLParallaxCarousel/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/TGLParallaxCarousel/TGLParallaxCarousel.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = TGLParallaxCarousel;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		44CDBB6D11DE06DB64D6268622BDC47E /* Release */ = {
+		9E406C6AAF85E580207CD97B0044DEAB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_REQUIRED = NO;
-				COPY_PHASE_STRIP = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"POD_CONFIGURATION_RELEASE=1",
 					"$(inherited)",
 				);
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
-				STRIP_INSTALLED_PRODUCT = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
-				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		521215F10A4AAB3C02D5EBCB0FFF0E65 /* Debug */ = {
+		CC4C048FA68E6634C0C0061F3A1FF3AD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F3A8C11C54FF73735B4B01FD8D516CC7 /* Pods-TGLParallaxCarousel_Tests.debug.xcconfig */;
+			baseConfigurationReference = 7575541EFFED78248123BD904AD02437 /* TGLParallaxCarousel.release.xcconfig */;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CODE_SIGN_IDENTITY = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-TGLParallaxCarousel_Tests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-TGLParallaxCarousel_Tests/Pods-TGLParallaxCarousel_Tests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_TGLParallaxCarousel_Tests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		6471F9510E6AA38CB9D3E182E9E36F9B /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 234EF5BD1A2300B54D550CC0C693E9CD /* TGLParallaxCarousel.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
+				ENABLE_MODULE_VERIFIER = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/TGLParallaxCarousel/TGLParallaxCarousel-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/TGLParallaxCarousel/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/TGLParallaxCarousel/TGLParallaxCarousel-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MODULEMAP_FILE = "Target Support Files/TGLParallaxCarousel/TGLParallaxCarousel.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++14";
+				PRODUCT_MODULE_NAME = TGLParallaxCarousel;
 				PRODUCT_NAME = TGLParallaxCarousel;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		ACC71B45D8961C29FF7BD855AB1E1751 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 404E69E47F768A29BA46D942DB9BA922 /* Pods-TGLParallaxCarousel_Example.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-TGLParallaxCarousel_Example/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-TGLParallaxCarousel_Example/Pods-TGLParallaxCarousel_Example.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_TGLParallaxCarousel_Example;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		E3DDABA66305B606AA785B2221950EC4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 361C42D5A44B70D9228E672F79EA0009 /* Pods-TGLParallaxCarousel_Example.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-TGLParallaxCarousel_Example/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-TGLParallaxCarousel_Example/Pods-TGLParallaxCarousel_Example.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_TGLParallaxCarousel_Example;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		F9585B48747F3DC71E1671C0B6705B0D /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E7B887F65A9B6BB84FC8A1F76A2B708F /* Pods-TGLParallaxCarousel_Tests.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-TGLParallaxCarousel_Tests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-TGLParallaxCarousel_Tests/Pods-TGLParallaxCarousel_Tests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_TGLParallaxCarousel_Tests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -671,43 +776,43 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+		11F11BB93C4DCE73A0D596AC5A93CC4F /* Build configuration list for PBXNativeTarget "Pods-TGLParallaxCarousel_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				015A368F878AC3E2CEAE21DDE8026304 /* Debug */,
-				44CDBB6D11DE06DB64D6268622BDC47E /* Release */,
+				82EF8181835209819C1AF61E5D93B105 /* Debug */,
+				76A12024C43B703E96AC26662D645D55 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BA2E570760C9B61EFE25164A1F7503B8 /* Build configuration list for PBXNativeTarget "Pods-TGLParallaxCarousel_Tests" */ = {
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				521215F10A4AAB3C02D5EBCB0FFF0E65 /* Debug */,
-				F9585B48747F3DC71E1671C0B6705B0D /* Release */,
+				8DE5143C03248BB6CD542DE3963D6F3A /* Debug */,
+				9E406C6AAF85E580207CD97B0044DEAB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D260EC69841A863DE93F85FC78120764 /* Build configuration list for PBXNativeTarget "TGLParallaxCarousel" */ = {
+		ADBA9C592A787EE982CAC62CC94FB1DC /* Build configuration list for PBXNativeTarget "Pods-TGLParallaxCarousel_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3EC8CEC85418A7B27C7005AE9581D321 /* Debug */,
-				6471F9510E6AA38CB9D3E182E9E36F9B /* Release */,
+				80F7AF3C68DC35551DB1B4B0C7AD07C4 /* Debug */,
+				0A35843C9391597351DFF730AEB7CBCB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E33D8F42356333DEDA58475E4F304B1E /* Build configuration list for PBXNativeTarget "Pods-TGLParallaxCarousel_Example" */ = {
+		F9CBB9FBE09DE02479E79FBA920B0AF7 /* Build configuration list for PBXNativeTarget "TGLParallaxCarousel" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				ACC71B45D8961C29FF7BD855AB1E1751 /* Debug */,
-				E3DDABA66305B606AA785B2221950EC4 /* Release */,
+				275E6D2C3E082532EC1BD470AC913D6F /* Debug */,
+				CC4C048FA68E6634C0C0061F3A1FF3AD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 }
