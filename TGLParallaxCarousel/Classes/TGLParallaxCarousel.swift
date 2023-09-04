@@ -121,12 +121,12 @@ open class TGLParallaxCarousel: UIView {
     func xibSetup() {
         containerView = loadViewFromNib()
         containerView.frame = bounds
-        containerView.autoresizingMask = [UIViewAutoresizing.flexibleWidth, UIViewAutoresizing.flexibleHeight]
+        containerView.autoresizingMask = [UIView.AutoresizingMask.flexibleWidth, UIView.AutoresizingMask.flexibleHeight]
         addSubview(containerView)
     }
     
     func loadViewFromNib() -> UIView {
-        let bundle = Bundle(for: type(of: self))
+        let bundle = Bundle(for: Swift.type(of: self))
         let nib = UINib(nibName: nibName, bundle: bundle)
         let view = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
         return view
@@ -182,7 +182,7 @@ open class TGLParallaxCarousel: UIView {
             
             
             let xDispNew = xDisplacement * CGFloat(index)
-            let zDispNew = round(-fabs(xDispNew) * zDisplacementFactor)
+            let zDispNew = round(-abs(xDispNew) * zDisplacementFactor)
             
             let translationX = CABasicAnimation(keyPath: "transform.translation.x")
             translationX.fromValue = item.xDisp
@@ -197,8 +197,8 @@ open class TGLParallaxCarousel: UIView {
             animationGroup.repeatCount = 1
             animationGroup.animations = [translationX, translationZ]
             animationGroup.isRemovedOnCompletion = false
-            animationGroup.fillMode = kCAFillModeRemoved
-            animationGroup.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+            animationGroup.fillMode = CAMediaTimingFillMode.removed
+            animationGroup.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
             item.layer.add(animationGroup, forKey: "myAnimation")
             
             var t = CATransform3DIdentity
@@ -215,7 +215,7 @@ open class TGLParallaxCarousel: UIView {
     
     
     // MARK: - gestures handler
-    func detectPan(_ recognizer:UIPanGestureRecognizer) {
+    @objc func detectPan(_ recognizer:UIPanGestureRecognizer) {
         
         let targetView = recognizer.view
         
@@ -238,10 +238,12 @@ open class TGLParallaxCarousel: UIView {
             
         case.possible:
             break
+        @unknown default:
+            break
         }
     }
     
-    func detectTap(_ recognizer:UITapGestureRecognizer) {
+    @objc func detectTap(_ recognizer:UITapGestureRecognizer) {
         
         let targetPoint: CGPoint = recognizer.location(in: recognizer.view)
         currentTargetLayer = mainView.layer.hitTest(targetPoint)!
@@ -316,7 +318,7 @@ open class TGLParallaxCarousel: UIView {
             
             
             item.xDisp = item.xDisp - offset
-            item.zDisp =  -fabs(item.xDisp) * zDisplacementFactor
+            item.zDisp =  -abs(item.xDisp) * zDisplacementFactor
             
             let factor = factorForXDisp(item.zDisp)
             
@@ -346,9 +348,9 @@ open class TGLParallaxCarousel: UIView {
         let pB = CGPoint(x : xDisplacement,y: 1)
         
         let m = (pB.y - pA.y) / (pB.x - pA.x)
-        let y = (pA.y - m * pA.x) + m * fabs(x)
+        let y = (pA.y - m * pA.x) + m * abs(x)
         
-        switch fabs(x) {
+        switch abs(x) {
         case (xDisplacement / 2)..<xDisplacement:
             return y
         case 0..<(xDisplacement / 2):
